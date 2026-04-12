@@ -1,0 +1,86 @@
+name: Update TSF Data & Deploy
+
+on:
+  schedule:
+    # 每月 1 日 08:00 UTC（台灣時間 16:00），抓上月底淨值
+    - cron: '0 8 1 * *'
+  workflow_dispatch:  # 允許手動在 GitHub 介面觸發
+
+jobs:
+  update-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # 允許 push 更新後的 JSON
+      pages: write      # 允許部署 GitHub Pages
+      id-token: write
+
+    steps:
+      # ── 1. 取得程式碼 ──────────────────────────────────────
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      # ── 2. 環境設定 ────────────────────────────────────────
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Install Node.js dependencies
+        run: npm ci
+
+      # ── 3. 資料爬取（各步驟獨立，失敗不中斷整體流程）──────
+      - name: Fetch SITCA fund NAV data
+        run: python sitca_scraper.py
+        continue-on-error: true   # SITCA 網站偶爾不穩，失敗沿用舊 CSV
+
+      - name: Fetch TAIEX total return index
+        run: node fetch_taiex_tri.js
+        continue-on-error: true
+
+      - name: Fetch 0050 total return index
+        run: python fetch_0050_total_return.py
+        continue-on-error: true
+
+      # ── 4. 重建 TSF 指數 JSON ────────────────────────────
+      - name: Rebuild tsf_index.json
+        run: python tsf_backtest_engine.py
+
+      # ── 5. 將更新後的資料 commit 回 main ─────────────────
+      - name: Commit updated data files
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/tsf_index.json \
+                  data/taiex.json \
+                  data/etf-0050.json \
+                  sitca_open_equity_domestic.csv
+          git diff --staged --quiet \
+            && echo "No data changes, skipping commit." \
+            || git commit -m "data: auto-update $(date -u '+%Y-%m-%d')"
+          git push
+
+      # ── 6. 打包 Pages 靜態檔案 ───────────────────────────
+      - name: Prepare Pages artifact
+        run: |
+          mkdir -p _site
+          cp tsf_backtest_with_real_data.html _site/index.html
+          cp -r data _site/data
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      # ── 7. 部署到 GitHub Pages ────────────────────────────
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4

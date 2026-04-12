@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>台股基金五虎將指數回測 · TSF-Top5 Index</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,600;0,14..32,700;0,14..32,800;0,14..32,900;1,14..32,400&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@700;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    :root {
+      --bg:        #060b18;
+      --surface:   #0b1325;
+      --surface-2: #101d35;
+      --surface-3: #16253f;
+      --border:    #1c2d47;
+      --border-hi: #273f60;
+      --amber:     #f59e0b;
+      --amber-dim: rgba(245,158,11,0.12);
+      --blue:      #60a5fa;
+      --teal:      #2dd4bf;
+      --purple:    #a78bfa;
+      --text:      #dce8f8;
+      --muted:     #5d7499;
+      --dim:       #243350;
+      --up:        #f87171;
+      --down:      #4ade80;
+      --font: 'Inter', 'Noto Sans TC', system-ui, sans-serif;
+    }
+
+    html, body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 15px;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Number rendering ── */
+    .num { font-variant-numeric: tabular-nums; font-feature-settings: "tnum"; }
+
+    /* ── Color helpers ── */
+    .tw-up   { color: var(--up);    }
+    .tw-down { color: var(--down);  }
+    .tw-amber{ color: var(--amber); }
+    .tw-blue { color: var(--blue);  }
+    .tw-teal { color: var(--teal);  }
+    .tw-purple { color: var(--purple); }
+    .tw-muted  { color: var(--muted);  }
+
+    /* ── Card base ── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color .2s, transform .2s;
+    }
+    .card:hover { border-color: var(--border-hi); }
+    .card-accent::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+    }
+    .card-accent-amber::before { background: var(--amber); }
+    .card-accent-blue::before  { background: var(--blue); }
+    .card-accent-teal::before  { background: var(--teal); }
+    .card-accent-purple::before{ background: var(--purple); }
+    .card-accent-red::before   { background: var(--up); }
+    .card-accent-dim::before   { background: var(--border-hi); }
+
+    /* ── Stat card ── */
+    .stat-card { padding: 1.1rem 1.25rem; }
+    .stat-label {
+      font-size: 0.97rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: .45rem;
+    }
+    .stat-value {
+      font-size: 1.9rem;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -.02em;
+    }
+    .stat-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-top: .35rem;
+    }
+
+    /* ── Panel ── */
+    .panel { padding: 1.25rem 1.4rem; }
+    .panel-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.1rem;
+    }
+
+    /* ── Dual range slider ── */
+    .range-wrap {
+      position: relative;
+      height: 28px;
+      display: flex;
+      align-items: center;
+    }
+    .range-track {
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      background: var(--surface-3);
+      border-radius: 3px;
+    }
+    .range-fill {
+      position: absolute;
+      height: 3px;
+      background: var(--amber);
+      border-radius: 3px;
+    }
+    .range-wrap input[type=range] {
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      -webkit-appearance: none;
+      background: transparent;
+      pointer-events: none;
+    }
+    .range-wrap input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--amber);
+      border: 2px solid var(--bg);
+      box-shadow: 0 0 0 1px var(--amber);
+      cursor: pointer;
+      pointer-events: all;
+      transition: box-shadow .15s;
+    }
+    .range-wrap input[type=range]::-webkit-slider-thumb:hover {
+      box-shadow: 0 0 0 4px rgba(245,158,11,.25);
+    }
+    .range-wrap input[type=range]::-moz-range-thumb {
+      width: 16px; height: 16px;
+      border-radius: 50%;
+      background: var(--amber);
+      border: 2px solid var(--bg);
+      cursor: pointer;
+      pointer-events: all;
+    }
+
+    /* ── Buttons ── */
+    .btn-mode {
+      padding: .6rem 0;
+      border-radius: 8px;
+      font-size: .8rem;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all .15s;
+      width: 100%;
+    }
+    .btn-mode.active {
+      background: var(--amber);
+      border-color: var(--amber);
+      color: #000;
+    }
+    .btn-mode:not(.active):hover {
+      border-color: var(--border-hi);
+      color: var(--text);
+    }
+    .btn-calc {
+      width: 100%;
+      padding: .85rem;
+      border-radius: 10px;
+      font-size: .85rem;
+      font-weight: 800;
+      background: var(--amber);
+      color: #000;
+      border: none;
+      cursor: pointer;
+      letter-spacing: .04em;
+      transition: background .15s, transform .1s;
+    }
+    .btn-calc:hover  { background: #fbbf24; }
+    .btn-calc:active { transform: scale(.98); }
+
+    /* ── Input ── */
+    .inp {
+      width: 100%;
+      padding: .6rem .75rem .6rem 2rem;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-size: .85rem;
+      font-family: var(--font);
+      outline: none;
+      transition: border-color .15s;
+    }
+    .inp:focus { border-color: var(--amber); }
+    .inp-wrap { position: relative; }
+    .inp-prefix {
+      position: absolute;
+      left: .75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+      font-size: .8rem;
+      pointer-events: none;
+    }
+
+    /* ── Divider ── */
+    .divider { border: none; border-top: 1px solid var(--border); margin: 1rem 0; }
+
+    /* ── Fund card ── */
+    .fund-card {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-top: 2px solid var(--amber);
+      border-radius: 10px;
+      padding: .9rem;
+      transition: border-color .2s, background .2s;
+    }
+    .fund-card:hover {
+      background: var(--surface-3);
+      border-color: var(--amber);
+    }
+    .fund-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: .15rem .45rem;
+      border-radius: 4px;
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .04em;
+      flex-shrink: 0;
+    }
+    .badge-new  { background: rgba(248,113,113,.15); color: var(--up); border: 1px solid rgba(248,113,113,.3); }
+    .badge-hold { background: rgba(96,165,250,.12);  color: var(--blue); border: 1px solid rgba(96,165,250,.25); }
+    .fund-stat {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: .4rem .5rem;
+      text-align: center;
+    }
+    .fund-stat-label { font-size: .72rem; color: var(--muted); margin-bottom: .2rem; }
+    .fund-stat-val   { font-size: .82rem; font-weight: 700; }
+
+    /* ── Table ── */
+    .data-table { width: 100%; border-collapse: collapse; font-size: 1.05rem; }
+    .data-table th {
+      text-align: left;
+      padding: .55rem .8rem;
+      font-size: .92rem;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+    .data-table td {
+      padding: .55rem .8rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+    }
+    .data-table tr:hover td { background: var(--surface-2); }
+    .data-table tr:last-child td { border-bottom: none; }
+
+    /* ── Action badges ── */
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: .12rem .45rem;
+      border-radius: 4px;
+      font-size: .68rem;
+      font-weight: 700;
+    }
+    .tag-init   { background: rgba(93,116,153,.15); color: var(--muted); }
+    .tag-swap   { background: rgba(251,191,36,.1); color: var(--amber); border: 1px solid rgba(251,191,36,.2); }
+    .tag-force  { background: rgba(248,113,113,.1); color: var(--up); }
+    .tag-hold   { background: rgba(74,222,128,.1); color: var(--down); }
+
+    /* ── Entrance animations ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .anim { opacity: 0; animation: fadeUp .5s ease forwards; }
+    .anim-1 { animation-delay:  60ms; }
+    .anim-2 { animation-delay: 120ms; }
+    .anim-3 { animation-delay: 180ms; }
+    .anim-4 { animation-delay: 240ms; }
+    .anim-5 { animation-delay: 300ms; }
+    .anim-6 { animation-delay: 360ms; }
+    .anim-7 { animation-delay: 420ms; }
+
+    /* ── Result mini row ── */
+    .result-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: .55rem .7rem;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      gap: .5rem;
+    }
+    .result-row-label { font-size: 1rem; color: var(--muted); display: flex; align-items: center; gap: .4rem; }
+    .result-row-vals  { display: flex; align-items: center; gap: .6rem; font-size: 1.05rem; font-weight: 700; }
+
+    /* ── Scrollbar ── */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--border-hi); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+
+    /* ── Header amber line ── */
+    .header-line {
+      height: 1px;
+      background: linear-gradient(90deg, var(--amber) 0%, transparent 60%);
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════ HEADER ════════════════ -->
+<header style="background: linear-gradient(160deg, #0b1530 0%, #091020 55%, #0d1a38 100%); border-bottom: 1px solid var(--border); position:relative; overflow:hidden;">
+  <!-- Subtle diagonal lines texture -->
+  <div style="position:absolute;inset:0;opacity:.04;background-image:repeating-linear-gradient(135deg,#fff 0,#fff 1px,transparent 0,transparent 50%);background-size:24px 24px;pointer-events:none;"></div>
+  <!-- Right glow -->
+  <div style="position:absolute;right:-80px;top:-60px;width:320px;height:320px;background:radial-gradient(circle,rgba(245,158,11,.07) 0%,transparent 70%);pointer-events:none;"></div>
+
+  <div style="max-width:1480px;margin:0 auto;padding:1.8rem 1.5rem 1.5rem;display:flex;align-items:flex-end;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;position:relative;">
+    <div>
+      <h1 style="font-family:'Noto Serif TC',serif; font-size:clamp(2rem,4vw,3rem); font-weight:900; line-height:1.1; letter-spacing:.02em; color:var(--amber); margin-bottom:.4rem; text-shadow:0 2px 24px rgba(245,158,11,.25);">
+        台股基金五虎將指數回測
+      </h1>
+      <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
+        <span style="font-family:'Inter',sans-serif;font-size:1.1rem;font-weight:600;letter-spacing:.08em;color:var(--text);opacity:.85;">TSF-Top5 Index</span>
+        <span style="width:1px;height:1rem;background:var(--border-hi);display:inline-block;"></span>
+        <span style="font-size:1.05rem;color:var(--muted);letter-spacing:.04em;">Tiger Score 532 · 台股股票型基金 · 半年換股</span>
+      </div>
+    </div>
+    <span id="lastUpdate" style="font-size:1.05rem;color:var(--muted);white-space:nowrap;flex-shrink:0;"></span>
+  </div>
+  <div class="header-line"></div>
+</header>
+
+<!-- ════════════════ MAIN ════════════════ -->
+<div style="max-width:1480px; margin:0 auto; padding:1.25rem; display:flex; flex-direction:column; gap:1rem;">
+
+  <div id="loadingMsg" style="text-align:center; padding:6rem; color:var(--muted); font-size:.9rem;">
+    載入數據中…
+  </div>
+
+  <div id="appBody" style="display:none; flex-direction:column; gap:1rem;">
+
+    <!-- ── STAT CARDS ROW ── -->
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:.75rem;" id="statRow">
+
+      <div class="card card-accent card-accent-red stat-card anim anim-1">
+        <div class="stat-label">TSF 累計報酬</div>
+        <div class="stat-value tw-up num" id="statTsfTotal">—</div>
+        <div class="stat-sub" id="statPeriodRange">—</div>
+      </div>
+
+      <div class="card card-accent card-accent-blue stat-card anim anim-2">
+        <div class="stat-label">TAIEX 報酬指數</div>
+        <div class="stat-value tw-blue num" id="statTaiexTotal">—</div>
+        <div class="stat-sub">同期</div>
+      </div>
+
+      <div class="card card-accent card-accent-teal stat-card anim anim-3">
+        <div class="stat-label">元大 0050</div>
+        <div class="stat-value tw-teal num" id="stat050Total">—</div>
+        <div class="stat-sub">同期</div>
+      </div>
+
+      <div class="card card-accent card-accent-amber stat-card anim anim-4">
+        <div class="stat-label">年化報酬 CAGR</div>
+        <div class="stat-value tw-amber num" id="statCagr">—</div>
+        <div class="stat-sub">TSF</div>
+      </div>
+
+      <div class="card card-accent card-accent-purple stat-card anim anim-5">
+        <div class="stat-label">超額報酬</div>
+        <div class="stat-value tw-purple num" id="statExcess">—</div>
+        <div class="stat-sub">vs TAIEX 累計差值</div>
+      </div>
+
+      <div class="card card-accent card-accent-dim stat-card anim anim-6">
+        <div class="stat-label">最大回撤</div>
+        <div class="stat-value num" style="color:var(--muted);" id="statMaxDD">—</div>
+        <div class="stat-sub">TSF</div>
+      </div>
+
+    </div><!-- end stat row -->
+
+    <!-- ── MAIN CONTENT: LEFT + RIGHT ── -->
+    <div style="display:grid; grid-template-columns:340px 1fr; gap:1rem; align-items:start;">
+
+      <!-- ════ LEFT CONTROL PANEL ════ -->
+      <aside style="display:flex; flex-direction:column; gap:.75rem;" class="anim anim-3">
+
+        <!-- 回測設定 -->
+        <div class="card panel">
+          <div class="panel-title">回測設定</div>
+
+          <!-- Mode toggle -->
+          <div style="margin-bottom:1rem;">
+            <div style="font-size:1.05rem; color:var(--muted); margin-bottom:.5rem;">投資模式</div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:.5rem;">
+              <button id="btnLump" class="btn-mode active" onclick="setMode('lump')">單筆投入</button>
+              <button id="btnDca"  class="btn-mode"        onclick="setMode('dca')">定期定額</button>
+            </div>
+          </div>
+
+          <!-- Lump amount -->
+          <div id="lumpAmtWrap" style="margin-bottom:1rem;">
+            <div style="font-size:1.05rem; color:var(--muted); margin-bottom:.5rem;">投入金額（新台幣）</div>
+            <div class="inp-wrap">
+              <span class="inp-prefix">$</span>
+              <input id="lumpAmt" type="text" value="1,000,000" oninput="formatAmtInput(this)" class="inp num">
+            </div>
+          </div>
+
+          <!-- DCA amount -->
+          <div id="dcaAmtWrap" style="margin-bottom:1rem; display:none;">
+            <div style="font-size:1.05rem; color:var(--muted); margin-bottom:.5rem;">每季投入金額（新台幣）</div>
+            <div class="inp-wrap">
+              <span class="inp-prefix">$</span>
+              <input id="dcaAmt" type="text" value="30,000" oninput="formatAmtInput(this)" class="inp num">
+            </div>
+            <div style="font-size:.97rem; color:var(--muted); margin-top:.4rem;">每季期初各投入一次（每半年調整TSF基金）</div>
+          </div>
+
+          <!-- Range slider -->
+          <div style="margin-bottom:1rem;">
+            <div style="font-size:1.05rem; color:var(--muted); margin-bottom:.7rem;">回測區間</div>
+            <div class="range-wrap" style="margin-bottom:.6rem;">
+              <div class="range-track"></div>
+              <div id="rangeFill" class="range-fill" style="left:0%;width:100%"></div>
+              <input type="range" id="rangeStart" min="0" max="24" value="0"  oninput="onSlider(event)">
+              <input type="range" id="rangeEnd"   min="0" max="24" value="24" oninput="onSlider(event)">
+            </div>
+            <div style="display:flex; justify-content:space-between; font-size:.9rem; font-weight:700; color:var(--amber);">
+              <span id="labelStart"></span>
+              <span id="labelEnd"></span>
+            </div>
+          </div>
+
+          <button class="btn-calc" onclick="calculate()">立即試算</button>
+        </div>
+
+        <!-- 試算結果 -->
+        <div class="card panel" id="resultCard" style="display:none;">
+          <div class="panel-title">試算結果</div>
+
+          <!-- TSF hero result -->
+          <div style="margin-bottom:1rem; padding:.9rem; background:var(--surface-2); border:1px solid var(--border); border-radius:10px; border-top:2px solid var(--up);">
+            <div style="font-size:.97rem; font-weight:700; letter-spacing:.06em; color:var(--muted); margin-bottom:.6rem; display:flex; align-items:center; gap:.4rem;">
+              <span style="width:8px;height:8px;border-radius:50%;background:var(--up);display:inline-block;"></span>
+              TSF 五虎將指數
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:.5rem; margin-bottom:.75rem;">
+              <div>
+                <div style="font-size:.97rem; color:var(--muted);">總投入</div>
+                <div class="num" id="rTsfInvest" style="font-size:1rem; font-weight:700; color:var(--text);"></div>
+              </div>
+              <div>
+                <div style="font-size:.97rem; color:var(--muted);">期末資產</div>
+                <div class="num" id="rTsfFinal" style="font-size:1rem; font-weight:700; color:var(--text);"></div>
+              </div>
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:.5rem;">
+              <div style="text-align:center; background:var(--surface); border-radius:8px; padding:.6rem;">
+                <div style="font-size:.97rem; color:var(--muted);">總報酬</div>
+                <div class="num" id="rTsfReturn" style="font-size:1.5rem; font-weight:900; letter-spacing:-.02em; line-height:1.1;"></div>
+              </div>
+              <div style="text-align:center; background:var(--surface); border-radius:8px; padding:.6rem;">
+                <div style="font-size:.97rem; color:var(--muted);">年化 CAGR</div>
+                <div class="num tw-amber" id="rTsfCagr" style="font-size:1.15rem; font-weight:800; line-height:1.1;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Benchmark comparison -->
+          <div style="display:flex; flex-direction:column; gap:.4rem; margin-bottom:.75rem;">
+            <div class="result-row">
+              <span class="result-row-label">
+                <span style="width:8px;height:8px;border-radius:50%;background:var(--blue);display:inline-block;flex-shrink:0;"></span>
+                加權報酬指數
+              </span>
+              <div class="result-row-vals num">
+                <span id="rTaiexReturn"></span>
+                <span style="color:var(--muted); font-weight:400; font-size:1rem;" id="rTaiexCagr"></span>
+              </div>
+            </div>
+            <div class="result-row">
+              <span class="result-row-label">
+                <span style="width:8px;height:8px;border-radius:50%;background:var(--teal);display:inline-block;flex-shrink:0;"></span>
+                元大 0050
+              </span>
+              <div class="result-row-vals num">
+                <span id="r050Return"></span>
+                <span style="color:var(--muted); font-weight:400; font-size:1rem;" id="r050Cagr"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Excess -->
+          <div style="background:rgba(167,139,250,.08); border:1px solid rgba(167,139,250,.2); border-radius:8px; padding:.7rem .9rem;">
+            <div style="font-size:.97rem; color:var(--muted); margin-bottom:.25rem;">超額報酬 vs TAIEX</div>
+            <div class="num tw-purple" id="rExcess" style="font-size:1.3rem; font-weight:900;"></div>
+          </div>
+        </div>
+
+      </aside><!-- end left -->
+
+      <!-- ════ RIGHT CHARTS ════ -->
+      <section style="display:flex; flex-direction:column; gap:.75rem;" class="anim anim-4">
+
+        <!-- Trend chart -->
+        <div class="card panel">
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:.75rem;">
+            <div style="font-size:1.15rem; font-weight:700; color:var(--text);">
+              淨值走勢
+              <span style="font-size:1rem; font-weight:400; color:var(--muted); margin-left:.4rem;">選定區間基準 = 100</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:1rem; font-size:1.05rem; color:var(--muted);">
+              <span style="display:flex;align-items:center;gap:.4rem;">
+                <svg width="18" height="3" viewBox="0 0 18 3"><line x1="0" y1="1.5" x2="18" y2="1.5" stroke="#f87171" stroke-width="2.5"/></svg>TSF
+              </span>
+              <span style="display:flex;align-items:center;gap:.4rem;">
+                <svg width="18" height="3" viewBox="0 0 18 3"><line x1="0" y1="1.5" x2="18" y2="1.5" stroke="#60a5fa" stroke-width="2"/></svg>TAIEX
+              </span>
+              <span style="display:flex;align-items:center;gap:.4rem;">
+                <svg width="18" height="3" viewBox="0 0 18 3"><line x1="0" y1="1.5" x2="18" y2="1.5" stroke="#2dd4bf" stroke-width="2"/></svg>0050
+              </span>
+            </div>
+          </div>
+          <div style="height:260px"><canvas id="trendChart"></canvas></div>
+        </div>
+
+        <!-- Drawdown chart -->
+        <div class="card panel">
+          <div style="font-size:1.15rem; font-weight:700; color:var(--text); margin-bottom:.75rem;">
+            回撤分析
+            <span style="font-size:1rem; font-weight:400; color:var(--muted); margin-left:.4rem;">距歷史高點跌幅</span>
+          </div>
+          <div style="height:170px"><canvas id="ddChart"></canvas></div>
+        </div>
+
+        <!-- Bar chart -->
+        <div class="card panel">
+          <div style="font-size:1.15rem; font-weight:700; color:var(--text); margin-bottom:.75rem;">每期報酬率</div>
+          <div style="height:210px"><canvas id="barChart"></canvas></div>
+        </div>
+
+      </section><!-- end right -->
+    </div><!-- end main content -->
+
+    <!-- ════ CURRENT PORTFOLIO ════ -->
+    <div class="card panel anim anim-5">
+      <div style="display:flex; align-items:baseline; gap:.75rem; margin-bottom:1rem;">
+        <div class="panel-title" style="margin-bottom:0;">當前成分股</div>
+        <span id="portfolioPeriod" style="font-size:1.05rem; color:var(--muted);"></span>
+      </div>
+      <div id="portfolioCards" style="display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:.75rem;"></div>
+    </div>
+
+    <!-- ════ REBALANCING HISTORY ════ -->
+    <div class="card panel anim anim-6">
+      <div class="panel-title">換股紀錄</div>
+      <div style="overflow-x:auto;">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th style="width:110px;">期別</th>
+              <th style="width:90px;">操作</th>
+              <th>進場基金</th>
+              <th>出場基金</th>
+              <th style="text-align:right;width:90px;">分數缺口</th>
+            </tr>
+          </thead>
+          <tbody id="changesBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ════ PERIOD DETAIL TABLE ════ -->
+    <div class="card panel anim anim-7">
+      <div class="panel-title">各期績效明細</div>
+      <div style="overflow-x:auto;">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>期別</th>
+              <th>成分股 <span style="font-weight:400;color:var(--up);letter-spacing:0;">紅=新進</span></th>
+              <th style="text-align:right;">TSF</th>
+              <th style="text-align:right;">TAIEX</th>
+              <th style="text-align:right;">0050</th>
+              <th style="text-align:right;width:60px;">換股</th>
+            </tr>
+          </thead>
+          <tbody id="periodBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+  </div><!-- end appBody -->
+</div><!-- end main container -->
+
+<script>
+  // ── Chart.js global dark theme ──
+  Chart.defaults.color          = '#5d7499';
+  Chart.defaults.borderColor    = '#1c2d47';
+
+  let DATA = [];
+  let MODE = 'lump';
+
+  function formatAmtInput(el) {
+    const raw = el.value.replace(/,/g, '').replace(/[^\d]/g, '');
+    if (raw === '') { el.value = ''; return; }
+    el.value = parseInt(raw, 10).toLocaleString('en-US');
+  }
+  let chartTrend, chartDD, chartBar;
+
+  // ── Helpers ──
+  const periodLabel = yyyymm => {
+    const y = Math.floor(yyyymm / 100), m = yyyymm % 100;
+    return m === 6 ? `${y} H1` : `${y} H2`;
+  };
+
+  const fmtMoney = n => {
+    if (n >= 1e8) return `$${(n/1e8).toFixed(2)} 億`;
+    if (n >= 1e4) return `$${(n/1e4).toFixed(1)} 萬`;
+    return `$${Math.round(n).toLocaleString()}`;
+  };
+
+  const twCls  = v => v > 0 ? 'tw-up' : v < 0 ? 'tw-down' : '';
+  const sign   = v => (v > 0 ? '+' : '') + v.toFixed(2) + '%';
+  const sign1  = v => (v > 0 ? '+' : '') + v.toFixed(1) + '%';
+  const fmtPct = (v, d=2) => `<span class="${twCls(v)} num" style="font-weight:700;">${v>0?'+':''}${v.toFixed(d)}%</span>`;
+
+  // ── Mode toggle ──
+  function setMode(m) {
+    MODE = m;
+    document.getElementById('btnLump').classList.toggle('active', m === 'lump');
+    document.getElementById('btnDca').classList.toggle('active',  m === 'dca');
+    document.getElementById('lumpAmtWrap').style.display = m === 'lump' ? '' : 'none';
+    document.getElementById('dcaAmtWrap').style.display  = m === 'dca'  ? '' : 'none';
+  }
+
+  // ── Dual slider ──
+  let _sliderTimer = null;
+  function onSlider(e) {
+    const s = document.getElementById('rangeStart');
+    const en = document.getElementById('rangeEnd');
+    let sv = parseInt(s.value), ev = parseInt(en.value);
+    if (sv >= ev) {
+      if (e && e.target === s) { sv = Math.max(0,   ev - 1); s.value  = sv; }
+      else                     { ev = Math.min(24,  sv + 1); en.value = ev; }
+    }
+    const max = parseInt(s.max);
+    document.getElementById('rangeFill').style.left  = (sv/max*100)+'%';
+    document.getElementById('rangeFill').style.width = ((ev-sv)/max*100)+'%';
+    document.getElementById('labelStart').textContent = periodLabel(DATA[sv].period_start);
+    document.getElementById('labelEnd').textContent   = periodLabel(DATA[ev].period_end);
+    clearTimeout(_sliderTimer);
+    _sliderTimer = setTimeout(updateChartsRange, 60);
+  }
+
+  // ── Drawdown ──
+  const calcDD = series => {
+    let peak = series[0];
+    return series.map(v => { peak = Math.max(peak, v); return (v-peak)/peak*100; });
+  };
+
+  // ── Update charts ──
+  function updateChartsRange() {
+    const sv    = parseInt(document.getElementById('rangeStart').value);
+    const ev    = parseInt(document.getElementById('rangeEnd').value);
+    const slice = DATA.slice(sv, ev+1);
+
+    const labels   = [periodLabel(DATA[sv].period_start), ...slice.map(p => periodLabel(p.period_end))];
+    const tsfRaw   = [DATA[sv].index_start,                     ...slice.map(p => p.index_end)];
+    const taiexRaw = [DATA[sv].benchmark.taiex_index_start,     ...slice.map(p => p.benchmark.taiex_index_end)];
+    const e050Raw  = [DATA[sv].benchmark.etf0050_index_start,   ...slice.map(p => p.benchmark.etf0050_index_end)];
+    const norm     = arr => arr.map(v => v/arr[0]*100);
+    const tsfN     = norm(tsfRaw), taiexN = norm(taiexRaw), e050N = norm(e050Raw);
+
+    chartTrend.data.labels           = labels;
+    chartTrend.data.datasets[0].data = tsfN;
+    chartTrend.data.datasets[1].data = taiexN;
+    chartTrend.data.datasets[2].data = e050N;
+    chartTrend.update('none');
+
+    const dd = calcDD(tsfRaw), minDD = Math.min(...dd);
+    chartDD.data.labels           = labels;
+    chartDD.data.datasets[0].data = dd;
+    chartDD.options.scales.y.min  = Math.floor(minDD * 1.15);
+    chartDD.update('none');
+
+    chartBar.data.labels           = slice.map(p => periodLabel(p.period_end));
+    chartBar.data.datasets[0].data = slice.map(p => p.period_return_pct);
+    chartBar.data.datasets[1].data = slice.map(p => p.benchmark.taiex_period_pct);
+    chartBar.data.datasets[2].data = slice.map(p => p.benchmark.etf0050_period_pct);
+    chartBar.update('none');
+
+    // Stats
+    const years      = slice.length * .5;
+    const tsfCumul   = tsfN[tsfN.length-1] - 100;
+    const taiexCumul = taiexN[taiexN.length-1] - 100;
+    const e050Cumul  = e050N[e050N.length-1] - 100;
+    const cagr       = (Math.pow(tsfRaw[tsfRaw.length-1]/tsfRaw[0], 1/years)-1)*100;
+    const excess     = tsfCumul - taiexCumul;
+
+    document.getElementById('statTsfTotal').innerHTML   = fmtPct(tsfCumul, 1);
+    document.getElementById('statTaiexTotal').innerHTML = fmtPct(taiexCumul, 1);
+    document.getElementById('stat050Total').innerHTML   = fmtPct(e050Cumul, 1);
+    document.getElementById('statCagr').innerHTML       = fmtPct(cagr, 2);
+    document.getElementById('statExcess').innerHTML     = fmtPct(excess, 1);
+    document.getElementById('statMaxDD').innerHTML      =
+      `<span class="num" style="font-weight:900;">${minDD.toFixed(1)}%</span>`;
+    document.getElementById('statPeriodRange').textContent =
+      `${periodLabel(DATA[sv].period_start)} → ${periodLabel(DATA[ev].period_end)}`;
+  }
+
+  // ── Simulate ──
+  function calculate() {
+    const sv     = parseInt(document.getElementById('rangeStart').value);
+    const ev     = parseInt(document.getElementById('rangeEnd').value);
+    const slice  = DATA.slice(sv, ev+1);
+    const amount = MODE === 'lump'
+      ? parseFloat(document.getElementById('lumpAmt').value.replace(/,/g, ''))
+      : parseFloat(document.getElementById('dcaAmt').value.replace(/,/g, ''));
+    if (!slice.length || !amount || amount <= 0) return;
+
+    const years = slice.length * .5;
+    let res;
+
+    if (MODE === 'lump') {
+      const sI = slice[0].index_start, eI = slice[slice.length-1].index_end;
+      const sT = slice[0].benchmark.taiex_index_start,  eT = slice[slice.length-1].benchmark.taiex_index_end;
+      const s5 = slice[0].benchmark.etf0050_index_start, e5 = slice[slice.length-1].benchmark.etf0050_index_end;
+      const fv = amount * (eI/sI);
+      res = {
+        invested: amount, finalVal: fv,
+        ret:  (fv/amount-1)*100,  cagr: (Math.pow(fv/amount, 1/years)-1)*100,
+        tRet: (eT/sT-1)*100,     tCagr: (Math.pow(eT/sT, 1/years)-1)*100,
+        eRet: (e5/s5-1)*100,     eCagr: (Math.pow(e5/s5, 1/years)-1)*100,
+      };
+    } else {
+      let tu=0, ttu=0, eu=0, inv=0;
+      for (const p of slice) {
+        // 每半年 period 含 2 個季，各投入一次 amount
+        tu  += (amount * 2) / p.index_start;
+        ttu += (amount * 2) / p.benchmark.taiex_index_start;
+        eu  += (amount * 2) / p.benchmark.etf0050_index_start;
+        inv += amount * 2;
+      }
+      const eI = slice[slice.length-1].index_end;
+      const eT = slice[slice.length-1].benchmark.taiex_index_end;
+      const e5 = slice[slice.length-1].benchmark.etf0050_index_end;
+      const fv = tu*eI, tf = ttu*eT, ef = eu*e5;
+      res = {
+        invested: inv, finalVal: fv,
+        ret:  (fv/inv-1)*100,  cagr: (Math.pow(fv/inv, 1/years)-1)*100,
+        tRet: (tf/inv-1)*100, tCagr: (Math.pow(tf/inv, 1/years)-1)*100,
+        eRet: (ef/inv-1)*100, eCagr: (Math.pow(ef/inv, 1/years)-1)*100,
+      };
+    }
+
+    const pctHtml = (v, d=1) => {
+      const cls = v > 0 ? 'var(--up)' : v < 0 ? 'var(--down)' : 'var(--muted)';
+      return `<span class="num" style="color:${cls};font-weight:700;">${v>0?'+':''}${v.toFixed(d)}%</span>`;
+    };
+
+    document.getElementById('rTsfInvest').textContent = fmtMoney(res.invested);
+    document.getElementById('rTsfFinal').textContent  = fmtMoney(res.finalVal);
+    document.getElementById('rTsfReturn').innerHTML   = pctHtml(res.ret, 1);
+    document.getElementById('rTsfCagr').textContent   = (res.cagr>0?'+':'') + res.cagr.toFixed(2) + '%';
+    document.getElementById('rTaiexReturn').innerHTML = pctHtml(res.tRet);
+    document.getElementById('rTaiexCagr').textContent = `年化 ${res.tCagr>0?'+':''}${res.tCagr.toFixed(2)}%`;
+    document.getElementById('r050Return').innerHTML   = pctHtml(res.eRet);
+    document.getElementById('r050Cagr').textContent   = `年化 ${res.eCagr>0?'+':''}${res.eCagr.toFixed(2)}%`;
+    document.getElementById('rExcess').innerHTML      = pctHtml(res.ret - res.tRet, 2);
+    document.getElementById('resultCard').style.display = '';
+  }
+
+  // ── Portfolio ──
+  function buildPortfolio(period) {
+    document.getElementById('portfolioPeriod').textContent =
+      `（${periodLabel(period.period_start)} → ${periodLabel(period.period_end)}）`;
+    document.getElementById('portfolioCards').innerHTML = period.funds.map(f => `
+      <div class="fund-card">
+        <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:.4rem; margin-bottom:.6rem;">
+          <span style="font-size:.93rem; font-weight:700; color:var(--text); line-height:1.35; flex:1;">${f.name}</span>
+          ${f.is_new
+            ? '<span class="fund-badge badge-new">新進</span>'
+            : '<span class="fund-badge badge-hold">蟬聯</span>'}
+        </div>
+        <div style="display:flex; align-items:baseline; justify-content:space-between; margin-bottom:.65rem;">
+          <div class="num" style="font-size:1.5rem; font-weight:900; letter-spacing:-.02em; color:${f.return_pct>=0?'var(--up)':'var(--down)'};">
+            ${f.return_pct>=0?'+':''}${f.return_pct.toFixed(2)}%
+          </div>
+          <div style="text-align:right;">
+            <div style="font-size:.97rem; color:var(--muted);">得分</div>
+            <div class="num tw-amber" style="font-size:.9rem; font-weight:800; line-height:1.1;">${f.score.toFixed(1)}</div>
+          </div>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:.35rem;">
+          <div class="fund-stat">
+            <div class="fund-stat-label">R1Y</div>
+            <div class="fund-stat-val num" style="color:${f.R1y>=0?'var(--up)':'var(--down)'};">${f.R1y>=0?'+':''}${f.R1y.toFixed(1)}%</div>
+          </div>
+          <div class="fund-stat">
+            <div class="fund-stat-label">R3Y</div>
+            <div class="fund-stat-val num" style="color:${f.R3y>=0?'var(--up)':'var(--down)'};">${f.R3y>=0?'+':''}${f.R3y.toFixed(1)}%</div>
+          </div>
+          <div class="fund-stat">
+            <div class="fund-stat-label">R5Y</div>
+            <div class="fund-stat-val num" style="color:${f.R5y>=0?'var(--up)':'var(--down)'};">${f.R5y>=0?'+':''}${f.R5y.toFixed(1)}%</div>
+          </div>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  // ── Changes table ──
+  function buildChangesTable() {
+    const rows = [];
+    DATA.forEach(p => {
+      const lbl = periodLabel(p.period_end);
+      p.changes.forEach(c => {
+        if (c.action === '全員衛冕') {
+          rows.push(`<tr>
+            <td style="color:var(--muted);">${lbl}</td>
+            <td><span class="tag tag-hold">全員衛冕</span></td>
+            <td colspan="3" style="color:var(--dim);">—</td>
+          </tr>`);
+        } else {
+          const tagCls = c.action==='換股' ? 'tag-swap' : c.action==='強制補位' ? 'tag-force' : 'tag-init';
+          const inHtml  = c.in_name  ? `<span style="color:var(--up); font-weight:600;">${c.in_name}</span>`  : '<span style="color:var(--dim);">—</span>';
+          const outHtml = c.out_name ? `<span style="color:var(--down);">${c.out_name}</span>` : '<span style="color:var(--dim);">—</span>';
+          rows.push(`<tr>
+            <td style="color:var(--muted); white-space:nowrap;">${lbl}</td>
+            <td><span class="tag ${tagCls}">${c.action}</span></td>
+            <td>${inHtml}</td>
+            <td>${outHtml}</td>
+            <td class="num" style="text-align:right; color:var(--muted);">${c.gap!=null ? '+'+c.gap.toFixed(2) : '—'}</td>
+          </tr>`);
+        }
+      });
+    });
+    document.getElementById('changesBody').innerHTML = rows.join('');
+  }
+
+  // ── Period table ──
+  function buildPeriodTable() {
+    document.getElementById('periodBody').innerHTML = DATA.map(p => {
+      const funds  = p.funds.map(f =>
+        `<span style="color:${f.is_new?'var(--up)':'var(--muted)'}; font-weight:${f.is_new?'600':'400'};">${f.name}</span>`
+      ).join('<span style="color:var(--dim); margin:0 .2rem;">·</span>');
+      const swaps  = p.changes.filter(c => c.action==='換股'||c.action==='強制補位').length;
+      const cv     = v => v>=0 ? 'var(--up)' : 'var(--down)';
+      return `<tr>
+        <td style="white-space:nowrap; color:var(--muted);">${periodLabel(p.period_start)} → ${periodLabel(p.period_end)}</td>
+        <td style="line-height:1.7; font-size:.9rem;">${funds}</td>
+        <td class="num" style="text-align:right; font-weight:700; color:${cv(p.period_return_pct)};">${sign(p.period_return_pct)}</td>
+        <td class="num" style="text-align:right; color:${cv(p.benchmark.taiex_period_pct)};">${sign(p.benchmark.taiex_period_pct)}</td>
+        <td class="num" style="text-align:right; color:${cv(p.benchmark.etf0050_period_pct)};">${sign(p.benchmark.etf0050_period_pct)}</td>
+        <td style="text-align:right;">${swaps>0?`<span class="num tw-amber" style="font-weight:700;">${swaps} 檔</span>`:'<span style="color:var(--dim);">—</span>'}</td>
+      </tr>`;
+    }).join('');
+  }
+
+  // ── Init charts ──
+  function initCharts() {
+    const GRID  = '#1c2d47';
+    const LABEL = '#5d7499';
+
+    // Trend
+    const tc   = document.getElementById('trendChart').getContext('2d');
+    const gradT = tc.createLinearGradient(0,0,0,260);
+    gradT.addColorStop(0, 'rgba(248,113,113,0.22)');
+    gradT.addColorStop(1, 'rgba(248,113,113,0)');
+    chartTrend = new Chart(tc, {
+      type: 'line',
+      data: {
+        labels: [],
+        datasets: [
+          { label:'TSF',   data:[], borderColor:'#f87171', backgroundColor:gradT, fill:true,  borderWidth:2.5, pointRadius:3, pointHoverRadius:5, tension:.35 },
+          { label:'TAIEX', data:[], borderColor:'#60a5fa', fill:false, borderWidth:1.8, pointRadius:2, pointHoverRadius:4, tension:.35 },
+          { label:'0050',  data:[], borderColor:'#2dd4bf', fill:false, borderWidth:1.8, pointRadius:2, pointHoverRadius:4, tension:.35 },
+        ]
+      },
+      options: {
+        responsive:true, maintainAspectRatio:false, animation:false,
+        interaction:{ intersect:false, mode:'index' },
+        plugins:{
+          legend:{ display:false },
+          tooltip:{
+            backgroundColor:'#0d1426',
+            borderColor:'#1c2d47', borderWidth:1,
+            titleColor:LABEL, bodyColor:'#dce8f8',
+            titleFont:{size:10}, bodyFont:{size:11},
+            callbacks:{ label: ctx => ` ${ctx.dataset.label}: ${ctx.parsed.y.toFixed(1)}` }
+          }
+        },
+        scales:{
+          x:{ grid:{display:false}, ticks:{color:LABEL, font:{size:10}, maxRotation:45, maxTicksLimit:14} },
+          y:{ position:'right', grid:{color:GRID}, ticks:{color:LABEL, font:{size:10}, callback:v=>v.toFixed(0)} }
+        }
+      }
+    });
+
+    // Drawdown
+    const dc   = document.getElementById('ddChart').getContext('2d');
+    const gradD = dc.createLinearGradient(0,0,0,170);
+    gradD.addColorStop(0, 'rgba(248,113,113,0.2)');
+    gradD.addColorStop(1, 'rgba(248,113,113,0)');
+    chartDD = new Chart(dc, {
+      type:'line',
+      data:{ labels:[], datasets:[{ label:'回撤', data:[], borderColor:'#f87171', backgroundColor:gradD, fill:true, borderWidth:1.5, pointRadius:0, tension:.2 }] },
+      options:{
+        responsive:true, maintainAspectRatio:false, animation:false,
+        plugins:{
+          legend:{display:false},
+          tooltip:{ backgroundColor:'#0d1426', borderColor:GRID, borderWidth:1, callbacks:{label:ctx=>` 回撤: ${ctx.parsed.y.toFixed(2)}%`} }
+        },
+        scales:{
+          x:{ grid:{display:false}, ticks:{color:LABEL, font:{size:10}, maxRotation:45, maxTicksLimit:14} },
+          y:{ position:'right', max:0, grid:{color:GRID}, ticks:{color:LABEL, font:{size:10}, callback:v=>v.toFixed(0)+'%'} }
+        }
+      }
+    });
+
+    // Bar
+    chartBar = new Chart(document.getElementById('barChart'), {
+      type:'bar',
+      data:{
+        labels:[],
+        datasets:[
+          { label:'TSF',   data:[], backgroundColor:'rgba(248,113,113,0.7)', borderRadius:3, order:1 },
+          { label:'TAIEX', data:[], backgroundColor:'rgba(96,165,250,0.55)',  borderRadius:3, order:2 },
+          { label:'0050',  data:[], backgroundColor:'rgba(45,212,191,0.5)',   borderRadius:3, order:3 },
+        ]
+      },
+      options:{
+        responsive:true, maintainAspectRatio:false, animation:false,
+        interaction:{mode:'index'},
+        plugins:{
+          legend:{ position:'top', labels:{color:LABEL, font:{size:10}, boxWidth:10, padding:12} },
+          tooltip:{ backgroundColor:'#0d1426', borderColor:GRID, borderWidth:1, callbacks:{ label:ctx=>` ${ctx.dataset.label}: ${ctx.parsed.y>=0?'+':''}${ctx.parsed.y.toFixed(2)}%` } }
+        },
+        scales:{
+          x:{ grid:{display:false}, ticks:{color:LABEL, font:{size:9}, maxRotation:45} },
+          y:{ position:'right', grid:{color:GRID}, ticks:{color:LABEL, font:{size:10}, callback:v=>v+'%'} }
+        }
+      }
+    });
+  }
+
+  // ── Main init ──
+  async function init() {
+    try {
+      const res = await fetch('data/tsf_index.json');
+      if (!res.ok) throw new Error('HTTP '+res.status);
+      DATA = await res.json();
+
+      const last = DATA[DATA.length-1];
+      document.getElementById('lastUpdate').textContent =
+        `數據截至 ${periodLabel(last.period_end)} · ${DATA.length} 期`;
+
+      document.getElementById('loadingMsg').style.display = 'none';
+      document.getElementById('appBody').style.display    = 'flex';
+
+      document.getElementById('rangeStart').max   = DATA.length-1;
+      document.getElementById('rangeEnd').max     = DATA.length-1;
+      document.getElementById('rangeEnd').value   = DATA.length-1;
+
+      initCharts();
+      buildPortfolio(last);
+      buildChangesTable();
+      buildPeriodTable();
+      onSlider(null);
+
+    } catch(err) {
+      document.getElementById('loadingMsg').textContent =
+        `載入失敗（${err.message}）。請透過 HTTP 伺服器開啟，並確認 data/tsf_index.json 存在。`;
+    }
+  }
+
+  init();
+</script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+
+# Node
+node_modules/
+
+# 暫存分析檔（底線開頭）
+_*.json
+_*.txt
+_*.csv
+
+# Debug / 診斷輸出
+debug_*.html
+fail_*.html
+diagnose_*.txt
+output.txt
+yf_output.txt
+*_output.txt
+
+# 一次性腳本（不需部署）
+analyze_*.py
+build_0050_tri*.py
+build_tsf_index.py
+check_*.py
+debug_*.py
+diagnose_*.py
+extract_*.py
+fetch_0050_yuanta.py
+fetch_benchmark*.py
+fetch_final_benchmark.py
+fetch_full_benchmark.py
+fix_*.py
+generate_*.py
+get_*.py
+map_*.py
+parse_*.py
+patch_*.py
+run_scraper_loop.py
+sweep_*.py
+test_*.py
+verify_*.py
+
+# 其他暫存
+*.txt
+!requirements.txt
+*.md
+!CLAUDE.md
+!QUICK_START.md
+progress_note.md
+tsf_simulation.json
+benchmark_quarterly.json
+sitca_202512_test.csv
+export_fail.html
+backtest_dashboard.html
+server.js
+tsf_data_service.js
+tsf_data_integration_guide.md
+
+# PDF / Office
+*.pdf
+*.xlsx
+
+# Claude 內部
+.claude/
+
+# 舊版 HTML
+files/

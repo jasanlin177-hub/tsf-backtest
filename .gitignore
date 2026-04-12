@@ -47,6 +47,7 @@ verify_*.py
 *.txt
 !requirements.txt
 *.md
+!README.md
 !CLAUDE.md
 !QUICK_START.md
 progress_note.md

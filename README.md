@@ -9,7 +9,7 @@
 ## 功能
 
 - **單筆投入回測**：指定金額、區間，計算 TSF vs TAIEX vs 0050 的總報酬與 CAGR
-- **定期定額回測**：每季投入，模擬長期 DCA 績效
+- **定期定額回測**：每月投入，模擬長期 DCA 績效
 - **淨值走勢圖**：互動式折線圖，區間基準 = 100
 - **回撤分析圖**：最大回撤走勢
 - **當前成分股**：最新一期五虎將及其 R1Y / R3Y / R5Y 報酬
@@ -34,6 +34,7 @@ Tiger Score = R1Y × 50% + R3Y × 30% + R5Y × 20%
 
 - 取分數前 5 名為成分股，加設**緩衝門檻**（0.6 × Top20 標準差）避免過度換股
 - 基金須有完整 5 年淨值紀錄才具評分資格
+- 回測歷史：2005 H2 – 2025 H2（20 年、40 期）
 - 資料來源：[基金資訊觀測站 SITCA](https://www.sitca.org.tw/)
 
 ---
@@ -41,7 +42,7 @@ Tiger Score = R1Y × 50% + R3Y × 30% + R5Y × 20%
 ## 資料管道
 
 ```
-sitca_scraper.py          → sitca_open_equity_domestic.csv   (基金月度淨值)
+sitca_fund_equity.csv                                        (SITCA 月份 NAV，2000/07–2026/03)
 fetch_taiex_tri.js        → data/taiex.json                  (TAIEX 報酬指數)
 fetch_0050_total_return.py → data/etf-0050.json              (0050 含息報酬)
         ↓
@@ -49,6 +50,8 @@ tsf_backtest_engine.py    → data/tsf_index.json              (TSF 指數全歷
         ↓
 tsf_backtest_with_real_data.html                             (前端回測介面)
 ```
+
+> `sitca_fund_equity.csv` 由 `filter_equity.py` 從 SITCA 原始資料篩選產生（國內股票型，52,850 筆月份記錄）。
 
 GitHub Actions 每月 1 日自動執行完整管道並部署至 GitHub Pages。
 
@@ -61,12 +64,11 @@ GitHub Actions 每月 1 日自動執行完整管道並部署至 GitHub Pages。
 pip install -r requirements.txt
 npm install
 
-# 更新各資料來源
-python sitca_scraper.py
+# 更新基準指數資料
 node fetch_taiex_tri.js
 python fetch_0050_total_return.py
 
-# 重建 TSF 指數
+# 重建 TSF 指數（讀取 sitca_fund_equity.csv）
 python tsf_backtest_engine.py
 
 # 啟動本地預覽（http://localhost:8000）
@@ -88,7 +90,8 @@ tsf-backtest/
 │   ├── tsf_index.json                # TSF 指數完整歷史（前端載入此檔）
 │   ├── taiex.json                    # TAIEX 報酬指數日頻數據
 │   └── etf-0050.json                 # 0050 含息報酬指數數據
-├── sitca_open_equity_domestic.csv    # SITCA 原始淨值資料
+├── sitca_fund_equity.csv             # SITCA 國內股票型月份 NAV（2000/07–2026/03）
+├── filter_equity.py                  # 從 SITCA 原始資料篩選股票型基金
 ├── requirements.txt
 ├── package.json
 └── .github/workflows/update-data.yml  # 自動更新排程

@@ -1,6 +1,6 @@
 """
 TSF-Top5 回測引擎
-資料來源：sitca_open_equity_domestic.csv（SITCA 每季末 NAV 快照）
+資料來源：sitca_fund_equity.csv（SITCA 月份 NAV，取季末快照）
 評分模型：532 = R1y×50% + R3y×30% + R5y×20%
 調整機制：每半年審核（6月底/12月底），緩衝門檻 = 0.6×σ(Top20)
 基準比較：TAIEX 報酬指數、0050 TRI（data/taiex.json, data/etf-0050.json）
@@ -51,14 +51,29 @@ def nav_at_period_end(nav_dict, yyyymm):
 # 1. 資料載入與清洗
 # ─────────────────────────────────────────────
 
-def load_sitca(path='sitca_open_equity_domestic.csv'):
-    df = pd.read_csv(path, encoding='utf-8-sig')
+def load_sitca(path='sitca_fund_equity.csv'):
+    df = pd.read_csv(path, encoding='utf-8-sig', low_memory=False)
 
-    # 排除零值 NAV（機構 I 類別）
+    # 新 CSV 欄名是 '單位淨值'，對齊舊格式
+    df = df.rename(columns={'單位淨值': NAV_COL}, errors='ignore')
+
+    # 新 CSV 為月份資料，只保留季末月份（3/6/9/12月）
+    df['年月'] = df['年月'].astype(int)
+    df = df[(df['年月'] % 100).isin([3, 6, 9, 12])].copy()
+
+    # 確保 NAV 為數值型
+    df[NAV_COL] = pd.to_numeric(df[NAV_COL], errors='coerce')
+
+    # 排除零值或空值 NAV（機構 I 類別）
     df = df[df[NAV_COL] > 0].copy()
 
-    # 排除外幣計價
-    df = df[df['計價幣別'] == 'TWD'].copy()
+    # 排除外幣計價（2002/12 前計價幣別為空，國內股票型基金預設為 TWD）
+    df = df[df['計價幣別'].fillna('TWD') == 'TWD'].copy()
+
+    # 確保 基金統編 為整數（新 CSV 可能有前置零，如 '00965469' → 965469）
+    df['基金統編'] = pd.to_numeric(df['基金統編'], errors='coerce')
+    df = df.dropna(subset=['基金統編'])
+    df['基金統編'] = df['基金統編'].astype(int)
 
     # 路博邁5G：只保留 T累積級別
     rob_mask = df['基金統編'] == ROBECO_ID
@@ -262,7 +277,8 @@ def build_tsf_index(df, start_period=201306,
         for fid in selected_ids:
             if fid not in nav_start.index or fid not in nav_end.index:
                 print(f'  [警告] 基金 {fid} 在 {period} 或 {next_period} 無 NAV，以 0% 報酬替代')
-                fund_details.append({'id': int(fid), 'nav_start': None, 'nav_end': None, 'return_pct': 0})
+                fname = scores.loc[fid, '基金名稱'] if fid in scores.index else str(fid)
+                fund_details.append({'id': int(fid), 'name': fname, 'nav_start': None, 'nav_end': None, 'return_pct': 0})
                 continue
 
             r = nav_end[fid] / nav_start[fid] - 1
@@ -351,8 +367,8 @@ if __name__ == '__main__':
     df = load_sitca()
     print(f'清洗後：{len(df)} 筆，{df["年月"].nunique()} 個期別\n')
 
-    print('建構 TSF 指數（起點 2013-06，基點 = 100）...\n')
-    results = build_tsf_index(df, start_period=201306)
+    print('建構 TSF 指數（起點 2005-12，基點 = 100）...\n')
+    results = build_tsf_index(df, start_period=200512)
 
     print(f'\n共完成 {len(results)} 個持有期\n')
     header = f'{"期間":<17} {"TSF":>8} {"TAIEX":>8} {"0050":>8}  {"換股":>4}  成分基金'

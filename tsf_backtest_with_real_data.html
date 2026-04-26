@@ -437,18 +437,18 @@
             <div style="font-size:1.05rem; color:var(--muted); margin-bottom:.5rem;">投入金額（新台幣）</div>
             <div class="inp-wrap">
               <span class="inp-prefix">$</span>
-              <input id="lumpAmt" type="text" value="1,000,000" oninput="formatAmtInput(this)" class="inp num">
+              <input id="lumpAmt" type="text" value="1,000,000" oninput="formatAmtInput(this); calculate();" class="inp num">
             </div>
           </div>
 
           <!-- DCA amount -->
           <div id="dcaAmtWrap" style="margin-bottom:1rem; display:none;">
-            <div style="font-size:1.05rem; color:var(--muted); margin-bottom:.5rem;">每季投入金額（新台幣）</div>
+            <div style="font-size:1.05rem; color:var(--muted); margin-bottom:.5rem;">每月投入金額（新台幣）</div>
             <div class="inp-wrap">
               <span class="inp-prefix">$</span>
-              <input id="dcaAmt" type="text" value="30,000" oninput="formatAmtInput(this)" class="inp num">
+              <input id="dcaAmt" type="text" value="10,000" oninput="formatAmtInput(this); calculate();" class="inp num">
             </div>
-            <div style="font-size:.97rem; color:var(--muted); margin-top:.4rem;">每季期初各投入一次（每半年調整TSF基金）</div>
+            <div style="font-size:.97rem; color:var(--muted); margin-top:.4rem;">每月期初投入（每半年調整TSF基金）</div>
           </div>
 
           <!-- Range slider -->
@@ -466,7 +466,6 @@
             </div>
           </div>
 
-          <button class="btn-calc" onclick="calculate()">立即試算</button>
         </div>
 
         <!-- 試算結果 -->
@@ -667,6 +666,7 @@
     document.getElementById('btnDca').classList.toggle('active',  m === 'dca');
     document.getElementById('lumpAmtWrap').style.display = m === 'lump' ? '' : 'none';
     document.getElementById('dcaAmtWrap').style.display  = m === 'dca'  ? '' : 'none';
+    calculate();
   }
 
   // ── Dual slider ──
@@ -676,8 +676,8 @@
     const en = document.getElementById('rangeEnd');
     let sv = parseInt(s.value), ev = parseInt(en.value);
     if (sv >= ev) {
-      if (e && e.target === s) { sv = Math.max(0,   ev - 1); s.value  = sv; }
-      else                     { ev = Math.min(24,  sv + 1); en.value = ev; }
+      if (e && e.target === s) { sv = Math.max(0,              ev - 1); s.value  = sv; }
+      else                     { ev = Math.min(DATA.length-1,  sv + 1); en.value = ev; }
     }
     const max = parseInt(s.max);
     document.getElementById('rangeFill').style.left  = (sv/max*100)+'%';
@@ -685,7 +685,7 @@
     document.getElementById('labelStart').textContent = periodLabel(DATA[sv].period_start);
     document.getElementById('labelEnd').textContent   = periodLabel(DATA[ev].period_end);
     clearTimeout(_sliderTimer);
-    _sliderTimer = setTimeout(updateChartsRange, 60);
+    _sliderTimer = setTimeout(() => { updateChartsRange(); calculate(); }, 60);
   }
 
   // ── Drawdown ──
@@ -771,11 +771,11 @@
     } else {
       let tu=0, ttu=0, eu=0, inv=0;
       for (const p of slice) {
-        // 每半年 period 含 2 個季，各投入一次 amount
-        tu  += (amount * 2) / p.index_start;
-        ttu += (amount * 2) / p.benchmark.taiex_index_start;
-        eu  += (amount * 2) / p.benchmark.etf0050_index_start;
-        inv += amount * 2;
+        // 每半年 period 含 6 個月，各投入一次 amount
+        tu  += (amount * 6) / p.index_start;
+        ttu += (amount * 6) / p.benchmark.taiex_index_start;
+        eu  += (amount * 6) / p.benchmark.etf0050_index_start;
+        inv += amount * 6;
       }
       const eI = slice[slice.length-1].index_end;
       const eT = slice[slice.length-1].benchmark.taiex_index_end;
@@ -1003,6 +1003,7 @@
       buildChangesTable();
       buildPeriodTable();
       onSlider(null);
+      calculate();
 
     } catch(err) {
       document.getElementById('loadingMsg').textContent =

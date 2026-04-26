@@ -1,55 +1,1646 @@
 [
   {
+    "period_start": 200512,
+    "period_end": 200606,
+    "index_start": 100.0,
+    "index_end": 98.42,
+    "period_return_pct": -1.58,
+    "threshold": 6.2,
+    "eligible_funds": 132,
+    "changes": [
+      {
+        "action": "初始建倉",
+        "in": 81584975,
+        "in_name": "日盛上選基金",
+        "in_score": 118.35
+      },
+      {
+        "action": "初始建倉",
+        "in": 83863951,
+        "in_name": "元大經貿基金",
+        "in_score": 117.78
+      },
+      {
+        "action": "初始建倉",
+        "in": 97988636,
+        "in_name": "保德信店頭市場基金",
+        "in_score": 114.44
+      },
+      {
+        "action": "初始建倉",
+        "in": 73988876,
+        "in_name": "日盛小而美基金",
+        "in_score": 113.42
+      },
+      {
+        "action": "初始建倉",
+        "in": 19341318,
+        "in_name": "建弘電子基金",
+        "in_score": 107.2
+      }
+    ],
+    "funds": [
+      {
+        "id": 81584975,
+        "name": "日盛上選基金",
+        "score": 118.35,
+        "R1y": 74.58,
+        "R3y": 143.27,
+        "R5y": 190.38,
+        "nav_start": 22.94,
+        "nav_end": 22.73,
+        "return_pct": -0.92,
+        "is_new": true
+      },
+      {
+        "id": 83863951,
+        "name": "元大經貿基金",
+        "score": 117.78,
+        "R1y": 79.17,
+        "R3y": 153.92,
+        "R5y": 160.08,
+        "nav_start": 20.39,
+        "nav_end": 18.39,
+        "return_pct": -9.81,
+        "is_new": true
+      },
+      {
+        "id": 97988636,
+        "name": "保德信店頭市場基金",
+        "score": 114.44,
+        "R1y": 105.04,
+        "R3y": 131.69,
+        "R5y": 112.1,
+        "nav_start": 21.57,
+        "nav_end": 22.06,
+        "return_pct": 2.27,
+        "is_new": true
+      },
+      {
+        "id": 73988876,
+        "name": "日盛小而美基金",
+        "score": 113.42,
+        "R1y": 77.5,
+        "R3y": 149.12,
+        "R5y": 149.67,
+        "nav_start": 11.36,
+        "nav_end": 11.32,
+        "return_pct": -0.35,
+        "is_new": true
+      },
+      {
+        "id": 19341318,
+        "name": "建弘電子基金",
+        "score": 107.2,
+        "R1y": 61.23,
+        "R3y": 128.93,
+        "R5y": 189.52,
+        "nav_start": 16.3,
+        "nav_end": 16.45,
+        "return_pct": 0.92,
+        "is_new": true
+      }
+    ],
+    "benchmark": {
+      "taiex_period_pct": 3.05,
+      "etf0050_period_pct": 3.37,
+      "taiex_index_start": 100.0,
+      "taiex_index_end": 103.05,
+      "etf0050_index_start": 100.0,
+      "etf0050_index_end": 103.37
+    }
+  },
+  {
+    "period_start": 200606,
+    "period_end": 200612,
+    "index_start": 98.42,
+    "index_end": 115.55,
+    "period_return_pct": 17.4,
+    "threshold": 3.87,
+    "eligible_funds": 136,
+    "changes": [
+      {
+        "action": "換股",
+        "out": 83863951,
+        "out_name": "元大經貿基金",
+        "out_score": 82.28,
+        "in": 18043059,
+        "in_name": "國泰中小成長基金",
+        "in_score": 87.5,
+        "gap": 5.22,
+        "threshold": 3.87
+      }
+    ],
+    "funds": [
+      {
+        "id": 19341318,
+        "name": "建弘電子基金",
+        "score": 85.79,
+        "R1y": 40.24,
+        "R3y": 123.81,
+        "R5y": 142.63,
+        "nav_start": 16.45,
+        "nav_end": 19.86,
+        "return_pct": 20.73,
+        "is_new": false
+      },
+      {
+        "id": 73988876,
+        "name": "日盛小而美基金",
+        "score": 94.11,
+        "R1y": 40.62,
+        "R3y": 162.04,
+        "R5y": 125.95,
+        "nav_start": 11.32,
+        "nav_end": 12.36,
+        "return_pct": 9.19,
+        "is_new": false
+      },
+      {
+        "id": 81584975,
+        "name": "日盛上選基金",
+        "score": 85.76,
+        "R1y": 35.78,
+        "R3y": 128.9,
+        "R5y": 146.0,
+        "nav_start": 22.73,
+        "nav_end": 27.53,
+        "return_pct": 21.12,
+        "is_new": false
+      },
+      {
+        "id": 18043059,
+        "name": "國泰中小成長基金",
+        "score": 87.5,
+        "R1y": 38.8,
+        "R3y": 138.73,
+        "R5y": 132.37,
+        "nav_start": 21.82,
+        "nav_end": 25.22,
+        "return_pct": 15.58,
+        "is_new": true
+      },
+      {
+        "id": 97988636,
+        "name": "保德信店頭市場基金",
+        "score": 88.14,
+        "R1y": 53.94,
+        "R3y": 148.7,
+        "R5y": 82.77,
+        "nav_start": 22.06,
+        "nav_end": 26.56,
+        "return_pct": 20.4,
+        "is_new": false
+      }
+    ],
+    "benchmark": {
+      "taiex_period_pct": 20.76,
+      "etf0050_period_pct": 16.64,
+      "taiex_index_start": 103.05,
+      "taiex_index_end": 124.44,
+      "etf0050_index_start": 103.37,
+      "etf0050_index_end": 120.57
+    }
+  },
+  {
+    "period_start": 200612,
+    "period_end": 200706,
+    "index_start": 115.55,
+    "index_end": 145.9,
+    "period_return_pct": 26.27,
+    "threshold": 4.93,
+    "eligible_funds": 140,
+    "changes": [
+      {
+        "action": "換股",
+        "out": 73988876,
+        "out_name": "日盛小而美基金",
+        "out_score": 57.97,
+        "in": 17153795,
+        "in_name": "富邦價值基金",
+        "in_score": 92.91,
+        "gap": 34.94,
+        "threshold": 4.93
+      },
+      {
+        "action": "換股",
+        "out": 81584975,
+        "out_name": "日盛上選基金",
+        "out_score": 68.52,
+        "in": 92004566,
+        "in_name": "寶來績效基金",
+        "in_score": 83.33,
+        "gap": 14.81,
+        "threshold": 4.93
+      },
+      {
+        "action": "換股",
+        "out": 19341318,
+        "out_name": "建弘電子基金",
+        "out_score": 68.83,
+        "in": 19339782,
+        "in_name": "群益創新科技基金",
+        "in_score": 83.14,
+        "gap": 14.31,
+        "threshold": 4.93
+      },
+      {
+        "action": "換股",
+        "out": 18043059,
+        "out_name": "國泰中小成長基金",
+        "out_score": 71.77,
+        "in": 17139204,
+        "in_name": "元大新主流基金",
+        "in_score": 78.85,
+        "gap": 7.08,
+        "threshold": 4.93
+      }
+    ],
+    "funds": [
+      {
+        "id": 17153795,
+        "name": "富邦價值基金",
+        "score": 92.91,
+        "R1y": 13.74,
+        "R3y": 113.04,
+        "R5y": 260.61,
+        "nav_start": 12.91,
+        "nav_end": 14.96,
+        "return_pct": 15.88,
+        "is_new": true
+      },
+      {
+        "id": 17139204,
+        "name": "元大新主流基金",
+        "score": 78.85,
+        "R1y": 27.97,
+        "R3y": 116.33,
+        "R5y": 149.85,
+        "nav_start": 16.29,
+        "nav_end": 22.27,
+        "return_pct": 36.71,
+        "is_new": true
+      },
+      {
+        "id": 19339782,
+        "name": "群益創新科技基金",
+        "score": 83.14,
+        "R1y": 44.51,
+        "R3y": 131.37,
+        "R5y": 107.37,
+        "nav_start": 22.79,
+        "nav_end": 29.03,
+        "return_pct": 27.38,
+        "is_new": true
+      },
+      {
+        "id": 92004566,
+        "name": "寶來績效基金",
+        "score": 83.33,
+        "R1y": 39.62,
+        "R3y": 107.62,
+        "R5y": 156.15,
+        "nav_start": 37.04,
+        "nav_end": 43.82,
+        "return_pct": 18.3,
+        "is_new": true
+      },
+      {
+        "id": 97988636,
+        "name": "保德信店頭市場基金",
+        "score": 74.65,
+        "R1y": 23.13,
+        "R3y": 152.95,
+        "R5y": 85.99,
+        "nav_start": 26.56,
+        "nav_end": 35.34,
+        "return_pct": 33.06,
+        "is_new": false
+      }
+    ],
+    "benchmark": {
+      "taiex_period_pct": 14.36,
+      "etf0050_period_pct": 13.61,
+      "taiex_index_start": 124.44,
+      "taiex_index_end": 142.31,
+      "etf0050_index_start": 120.57,
+      "etf0050_index_end": 136.98
+    }
+  },
+  {
+    "period_start": 200706,
+    "period_end": 200712,
+    "index_start": 145.9,
+    "index_end": 127.02,
+    "period_return_pct": -12.94,
+    "threshold": 8.63,
+    "eligible_funds": 147,
+    "changes": [
+      {
+        "action": "換股",
+        "out": 17153795,
+        "out_name": "富邦價值基金",
+        "out_score": 95.75,
+        "in": 1032058,
+        "in_name": "元大多福基金",
+        "in_score": 150.7,
+        "gap": 54.95,
+        "threshold": 8.63
+      },
+      {
+        "action": "換股",
+        "out": 92004566,
+        "out_name": "寶來績效基金",
+        "out_score": 129.41,
+        "in": 81584975,
+        "in_name": "日盛上選基金",
+        "in_score": 141.34,
+        "gap": 11.93,
+        "threshold": 8.63
+      }
+    ],
+    "funds": [
+      {
+        "id": 17139204,
+        "name": "元大新主流基金",
+        "score": 158.37,
+        "R1y": 77.17,
+        "R3y": 198.93,
+        "R5y": 300.54,
+        "nav_start": 22.27,
+        "nav_end": 19.72,
+        "return_pct": -11.45,
+        "is_new": false
+      },
+      {
+        "id": 19339782,
+        "name": "群益創新科技基金",
+        "score": 142.63,
+        "R1y": 87.53,
+        "R3y": 188.57,
+        "R5y": 211.48,
+        "nav_start": 29.03,
+        "nav_end": 22.88,
+        "return_pct": -21.18,
+        "is_new": false
+      },
+      {
+        "id": 81584975,
+        "name": "日盛上選基金",
+        "score": 141.34,
+        "R1y": 62.3,
+        "R3y": 185.31,
+        "R5y": 273.0,
+        "nav_start": 36.89,
+        "nav_end": 35.61,
+        "return_pct": -3.47,
+        "is_new": true
+      },
+      {
+        "id": 1032058,
+        "name": "元大多福基金",
+        "score": 150.7,
+        "R1y": 78.61,
+        "R3y": 189.65,
+        "R5y": 272.5,
+        "nav_start": 47.01,
+        "nav_end": 42.3,
+        "return_pct": -10.02,
+        "is_new": true
+      },
+      {
+        "id": 97988636,
+        "name": "保德信店頭市場基金",
+        "score": 154.06,
+        "R1y": 60.2,
+        "R3y": 277.97,
+        "R5y": 202.83,
+        "nav_start": 35.34,
+        "nav_end": 28.77,
+        "return_pct": -18.59,
+        "is_new": false
+      }
+    ],
+    "benchmark": {
+      "taiex_period_pct": -1.63,
+      "etf0050_period_pct": -2.15,
+      "taiex_index_start": 142.31,
+      "taiex_index_end": 139.99,
+      "etf0050_index_start": 136.98,
+      "etf0050_index_end": 134.03
+    }
+  },
+  {
+    "period_start": 200712,
+    "period_end": 200806,
+    "index_start": 127.02,
+    "index_end": 108.96,
+    "period_return_pct": -14.22,
+    "threshold": 7.33,
+    "eligible_funds": 149,
+    "changes": [
+      {
+        "action": "換股",
+        "out": 19339782,
+        "out_name": "群益創新科技基金",
+        "out_score": 75.47,
+        "in": 13998344,
+        "in_name": "大華中小基金",
+        "in_score": 121.81,
+        "gap": 46.34,
+        "threshold": 7.33
+      },
+      {
+        "action": "換股",
+        "out": 97988636,
+        "out_name": "保德信店頭市場基金",
+        "out_score": 98.01,
+        "in": 17605622,
+        "in_name": "統一大滿貫基金",
+        "in_score": 107.29,
+        "gap": 9.28,
+        "threshold": 7.33
+      }
+    ],
+    "funds": [
+      {
+        "id": 17139204,
+        "name": "元大新主流基金",
+        "score": 99.4,
+        "R1y": 21.06,
+        "R3y": 141.96,
+        "R5y": 231.43,
+        "nav_start": 19.72,
+        "nav_end": 15.12,
+        "return_pct": -23.33,
+        "is_new": false
+      },
+      {
+        "id": 13998344,
+        "name": "大華中小基金",
+        "score": 121.81,
+        "R1y": 33.37,
+        "R3y": 187.95,
+        "R5y": 243.7,
+        "nav_start": 36.57,
+        "nav_end": 39.03,
+        "return_pct": 6.73,
+        "is_new": true
+      },
+      {
+        "id": 81584975,
+        "name": "日盛上選基金",
+        "score": 121.5,
+        "R1y": 29.35,
+        "R3y": 171.0,
+        "R5y": 277.62,
+        "nav_start": 35.61,
+        "nav_end": 30.55,
+        "return_pct": -14.21,
+        "is_new": false
+      },
+      {
+        "id": 17605622,
+        "name": "統一大滿貫基金",
+        "score": 107.29,
+        "R1y": 39.78,
+        "R3y": 128.57,
+        "R5y": 244.16,
+        "nav_start": 15.04,
+        "nav_end": 12.62,
+        "return_pct": -16.09,
+        "is_new": true
+      },
+      {
+        "id": 1032058,
+        "name": "元大多福基金",
+        "score": 109.97,
+        "R1y": 26.04,
+        "R3y": 151.04,
+        "R5y": 258.17,
+        "nav_start": 42.3,
+        "nav_end": 32.07,
+        "return_pct": -24.18,
+        "is_new": false
+      }
+    ],
+    "benchmark": {
+      "taiex_period_pct": -11.08,
+      "etf0050_period_pct": -10.15,
+      "taiex_index_start": 139.99,
+      "taiex_index_end": 124.49,
+      "etf0050_index_start": 134.03,
+      "etf0050_index_end": 120.43
+    }
+  },
+  {
+    "period_start": 200806,
+    "period_end": 200812,
+    "index_start": 108.96,
+    "index_end": 73.02,
+    "period_return_pct": -32.99,
+    "threshold": 11.33,
+    "eligible_funds": 153,
+    "changes": [
+      {
+        "action": "換股",
+        "out": 17139204,
+        "out_name": "元大新主流基金",
+        "out_score": 35.09,
+        "in": 81594690,
+        "in_name": "永豐永豐基金",
+        "in_score": 62.06,
+        "gap": 26.97,
+        "threshold": 11.33
+      }
+    ],
+    "funds": [
+      {
+        "id": 81594690,
+        "name": "永豐永豐基金",
+        "score": 62.06,
+        "R1y": 23.61,
+        "R3y": 91.49,
+        "R5y": 114.02,
+        "nav_start": 21.83,
+        "nav_end": 14.01,
+        "return_pct": -35.82,
+        "is_new": true
+      },
+      {
+        "id": 13998344,
+        "name": "永豐中小基金",
+        "score": 118.11,
+        "R1y": 23.79,
+        "R3y": 165.87,
+        "R5y": 282.27,
+        "nav_start": 39.03,
+        "nav_end": 23.55,
+        "return_pct": -39.66,
+        "is_new": false
+      },
+      {
+        "id": 81584975,
+        "name": "日盛上選基金",
+        "score": 57.69,
+        "R1y": -17.19,
+        "R3y": 82.5,
+        "R5y": 207.65,
+        "nav_start": 30.55,
+        "nav_end": 21.09,
+        "return_pct": -30.97,
+        "is_new": false
+      },
+      {
+        "id": 17605622,
+        "name": "統一大滿貫基金",
+        "score": 59.75,
+        "R1y": -10.69,
+        "R3y": 86.14,
+        "R5y": 196.24,
+        "nav_start": 12.62,
+        "nav_end": 8.15,
+        "return_pct": -35.42,
+        "is_new": false
+      },
+      {
+        "id": 1032058,
+        "name": "元大多福基金",
+        "score": 36.56,
+        "R1y": -31.78,
+        "R3y": 73.16,
+        "R5y": 152.52,
+        "nav_start": 32.07,
+        "nav_end": 24.67,
+        "return_pct": -23.07,
+        "is_new": false
+      }
+    ],
+    "benchmark": {
+      "taiex_period_pct": -35.98,
+      "etf0050_period_pct": -36.67,
+      "taiex_index_start": 124.49,
+      "taiex_index_end": 79.7,
+      "etf0050_index_start": 120.43,
+      "etf0050_index_end": 76.27
+    }
+  },
+  {
+    "period_start": 200812,
+    "period_end": 200906,
+    "index_start": 73.02,
+    "index_end": 90.42,
+    "period_return_pct": 23.83,
+    "threshold": 4.14,
+    "eligible_funds": 142,
+    "changes": [
+      {
+        "action": "換股",
+        "out": 17605622,
+        "out_name": "統一大滿貫基金",
+        "out_score": -17.61,
+        "in": 80894446,
+        "in_name": "台灣工銀中國通基金",
+        "in_score": -4.29,
+        "gap": 13.32,
+        "threshold": 4.14
+      },
+      {
+        "action": "換股",
+        "out": 1032058,
+        "out_name": "元大多福基金",
+        "out_score": -13.93,
+        "in": 18488279,
+        "in_name": "復華中小精選基金",
+        "in_score": -5.92,
+        "gap": 8.01,
+        "threshold": 4.14
+      }
+    ],
+    "funds": [
+      {
+        "id": 81594690,
+        "name": "永豐永豐基金",
+        "score": -4.63,
+        "R1y": -32.42,
+        "R3y": 28.65,
+        "R5y": 14.93,
+        "nav_start": 14.01,
+        "nav_end": 20.67,
+        "return_pct": 47.54,
+        "is_new": false
+      },
+      {
+        "id": 13998344,
+        "name": "永豐中小基金",
+        "score": 3.67,
+        "R1y": -35.6,
+        "R3y": 18.4,
+        "R5y": 79.77,
+        "nav_start": 23.55,
+        "nav_end": 34.5,
+        "return_pct": 46.5,
+        "is_new": false
+      },
+      {
+        "id": 80894446,
+        "name": "台灣工銀中國通基金",
+        "score": -4.29,
+        "R1y": -18.95,
+        "R3y": 10.23,
+        "R5y": 10.58,
+        "nav_start": 13.9,
+        "nav_end": 15.94,
+        "return_pct": 14.68,
+        "is_new": true
+      },
+      {
+        "id": 81584975,
+        "name": "日盛上選基金",
+        "score": -11.26,
+        "R1y": -40.78,
+        "R3y": -8.06,
+        "R5y": 57.74,
+        "nav_start": 21.09,
+        "nav_end": 21.77,
+        "return_pct": 3.22,
+        "is_new": false
+      },
+      {
+        "id": 18488279,
+        "name": "復華中小精選基金",
+        "score": -5.92,
+        "R1y": -30.09,
+        "R3y": -10.09,
+        "R5y": 60.79,
+        "nav_start": 20.05,
+        "nav_end": 21.5,
+        "return_pct": 7.23,
+        "is_new": true
+      }
+    ],
+    "benchmark": {
+      "taiex_period_pct": 40.25,
+      "etf0050_period_pct": 34.44,
+      "taiex_index_start": 79.7,
+      "taiex_index_end": 111.78,
+      "etf0050_index_start": 76.27,
+      "etf0050_index_end": 102.54
+    }
+  },
+  {
+    "period_start": 200906,
+    "period_end": 200912,
+    "index_start": 90.42,
+    "index_end": 115.4,
+    "period_return_pct": 27.63,
+    "threshold": 4.94,
+    "eligible_funds": 141,
+    "changes": [
+      {
+        "action": "換股",
+        "out": 81584975,
+        "out_name": "日盛上選基金",
+        "out_score": -1.96,
+        "in": 97982984,
+        "in_name": "金鼎概念型基金",
+        "in_score": 32.8,
+        "gap": 34.76,
+        "threshold": 4.94
+      },
+      {
+        "action": "換股",
+        "out": 18488279,
+        "out_name": "復華中小精選基金",
+        "out_score": 5.53,
+        "in": 1032058,
+        "in_name": "元大多福基金",
+        "in_score": 30.63,
+        "gap": 25.1,
+        "threshold": 4.94
+      },
+      {
+        "action": "換股",
+        "out": 80894446,
+        "out_name": "台灣工銀中國通基金",
+        "out_score": 16.61,
+        "in": 17602821,
+        "in_name": "台灣工銀2000高科技基金",
+        "in_score": 24.71,
+        "gap": 8.1,
+        "threshold": 4.94
+      }
+    ],
+    "funds": [
+      {
+        "id": 81594690,
+        "name": "永豐永豐基金",
+        "score": 32.06,
+        "R1y": -5.31,
+        "R3y": 67.64,
+        "R5y": 72.11,
+        "nav_start": 20.67,
+        "nav_end": 25.09,
+        "return_pct": 21.38,
+        "is_new": false
+      },
+      {
+        "id": 17602821,
+        "name": "台灣工銀2000高科技基金",
+        "score": 24.71,
+        "R1y": 2.0,
+        "R3y": 12.78,
+        "R5y": 99.4,
+        "nav_start": 13.24,
+        "nav_end": 17.02,
+        "return_pct": 28.55,
+        "is_new": true
+      },
+      {
+        "id": 13998344,
+        "name": "永豐中小基金",
+        "score": 50.84,
+        "R1y": -11.61,
+        "R3y": 67.56,
+        "R5y": 181.86,
+        "nav_start": 34.5,
+        "nav_end": 43.83,
+        "return_pct": 27.04,
+        "is_new": false
+      },
+      {
+        "id": 97982984,
+        "name": "金鼎概念型基金",
+        "score": 32.8,
+        "R1y": 18.0,
+        "R3y": 30.07,
+        "R5y": 73.88,
+        "nav_start": 21.37,
+        "nav_end": 27.51,
+        "return_pct": 28.73,
+        "is_new": true
+      },
+      {
+        "id": 1032058,
+        "name": "元大多福基金",
+        "score": 30.63,
+        "R1y": 3.62,
+        "R3y": 26.25,
+        "R5y": 104.74,
+        "nav_start": 33.23,
+        "nav_end": 44.01,
+        "return_pct": 32.44,
+        "is_new": true
+      }
+    ],
+    "benchmark": {
+      "taiex_period_pct": 30.72,
+      "etf0050_period_pct": 29.31,
+      "taiex_index_start": 111.78,
+      "taiex_index_end": 146.12,
+      "etf0050_index_start": 102.54,
+      "etf0050_index_end": 132.59
+    }
+  },
+  {
+    "period_start": 200912,
+    "period_end": 201006,
+    "index_start": 115.4,
+    "index_end": 102.85,
+    "period_return_pct": -10.88,
+    "threshold": 4.96,
+    "eligible_funds": 142,
+    "changes": [
+      {
+        "action": "換股",
+        "out": 81594690,
+        "out_name": "永豐永豐基金",
+        "out_score": 78.13,
+        "in": 18033138,
+        "in_name": "德信數位時代基金",
+        "in_score": 96.95,
+        "gap": 18.82,
+        "threshold": 4.96
+      },
+      {
+        "action": "換股",
+        "out": 17602821,
+        "out_name": "台灣工銀2000高科技基金",
+        "out_score": 79.77,
+        "in": 73988876,
+        "in_name": "日盛小而美基金",
+        "in_score": 92.54,
+        "gap": 12.77,
+        "threshold": 4.96
+      },
+      {
+        "action": "換股",
+        "out": 1032058,
+        "out_name": "元大多福基金",
+        "out_score": 80.78,
+        "in": 18043059,
+        "in_name": "國泰中小成長基金",
+        "in_score": 91.06,
+        "gap": 10.28,
+        "threshold": 4.96
+      },
+      {
+        "action": "換股",
+        "out": 97982984,
+        "out_name": "金鼎概念型基金",
+        "out_score": 85.15,
+        "in": 17146752,
+        "in_name": "安泰ING成長基金",
+        "in_score": 90.47,
+        "gap": 5.32,
+        "threshold": 4.96
+      }
+    ],
+    "funds": [
+      {
+        "id": 17146752,
+        "name": "安泰ING成長基金",
+        "score": 90.47,
+        "R1y": 105.09,
+        "R3y": 30.7,
+        "R5y": 143.57,
+        "nav_start": 15.71,
+        "nav_end": 13.65,
+        "return_pct": -13.11,
+        "is_new": true
+      },
+      {
+        "id": 13998344,
+        "name": "永豐中小基金",
+        "score": 110.03,
+        "R1y": 86.11,
+        "R3y": 59.85,
+        "R5y": 245.12,
+        "nav_start": 43.83,
+        "nav_end": 40.71,
+        "return_pct": -7.12,
+        "is_new": false
+      },
+      {
+        "id": 73988876,
+        "name": "日盛小而美基金",
+        "score": 92.54,
+        "R1y": 121.5,
+        "R3y": 19.17,
+        "R5y": 130.16,
+        "nav_start": 14.73,
+        "nav_end": 12.85,
+        "return_pct": -12.76,
+        "is_new": true
+      },
+      {
+        "id": 18033138,
+        "name": "德信數位時代基金",
+        "score": 96.95,
+        "R1y": 111.65,
+        "R3y": 29.54,
+        "R5y": 161.3,
+        "nav_start": 15.26,
+        "nav_end": 14.06,
+        "return_pct": -7.86,
+        "is_new": true
+      },
+      {
+        "id": 18043059,
+        "name": "國泰中小成長基金",
+        "score": 91.06,
+        "R1y": 105.92,
+        "R3y": 31.05,
+        "R5y": 143.91,
+        "nav_start": 33.05,
+        "nav_end": 28.58,
+        "return_pct": -13.52,
+        "is_new": true
+      }
+    ],
+    "benchmark": {
+      "taiex_period_pct": -10.43,
+      "etf0050_period_pct": -12.23,
+      "taiex_index_start": 146.12,
+      "taiex_index_end": 130.89,
+      "etf0050_index_start": 132.59,
+      "etf0050_index_end": 116.37
+    }
+  },
+  {
+    "period_start": 201006,
+    "period_end": 201012,
+    "index_start": 102.85,
+    "index_end": 119.32,
+    "period_return_pct": 16.02,
+    "threshold": 4.35,
+    "eligible_funds": 145,
+    "changes": [
+      {
+        "action": "換股",
+        "out": 73988876,
+        "out_name": "日盛小而美基金",
+        "out_score": 20.73,
+        "in": 17605622,
+        "in_name": "統一大滿貫基金",
+        "in_score": 38.52,
+        "gap": 17.79,
+        "threshold": 4.35
+      },
+      {
+        "action": "換股",
+        "out": 18043059,
+        "out_name": "國泰中小成長基金",
+        "out_score": 26.08,
+        "in": 97982984,
+        "in_name": "金鼎概念型基金",
+        "in_score": 36.42,
+        "gap": 10.34,
+        "threshold": 4.35
+      },
+      {
+        "action": "換股",
+        "out": 17146752,
+        "out_name": "安泰ING成長基金",
+        "out_score": 26.1,
+        "in": 81594690,
+        "in_name": "永豐永豐基金",
+        "in_score": 34.0,
+        "gap": 7.9,
+        "threshold": 4.35
+      }
+    ],
+    "funds": [
+      {
+        "id": 81594690,
+        "name": "永豐永豐基金",
+        "score": 34.0,
+        "R1y": 10.4,
+        "R3y": 29.22,
+        "R5y": 100.18,
+        "nav_start": 22.82,
+        "nav_end": 29.53,
+        "return_pct": 29.4,
+        "is_new": true
+      },
+      {
+        "id": 13998344,
+        "name": "永豐中小基金",
+        "score": 53.2,
+        "R1y": 18.0,
+        "R3y": 29.12,
+        "R5y": 177.32,
+        "nav_start": 40.71,
+        "nav_end": 45.61,
+        "return_pct": 12.04,
+        "is_new": false
+      },
+      {
+        "id": 97982984,
+        "name": "金鼎概念型基金",
+        "score": 36.42,
+        "R1y": 23.26,
+        "R3y": 1.74,
+        "R5y": 121.34,
+        "nav_start": 26.34,
+        "nav_end": 27.14,
+        "return_pct": 3.04,
+        "is_new": true
+      },
+      {
+        "id": 18033138,
+        "name": "德信數位時代基金",
+        "score": 35.83,
+        "R1y": 33.14,
+        "R3y": -6.39,
+        "R5y": 105.86,
+        "nav_start": 14.06,
+        "nav_end": 15.86,
+        "return_pct": 12.8,
+        "is_new": false
+      },
+      {
+        "id": 17605622,
+        "name": "統一大滿貫基金",
+        "score": 38.52,
+        "R1y": 29.31,
+        "R3y": 3.04,
+        "R5y": 114.75,
+        "nav_start": 14.56,
+        "nav_end": 17.88,
+        "return_pct": 22.8,
+        "is_new": true
+      }
+    ],
+    "benchmark": {
+      "taiex_period_pct": 26.79,
+      "etf0050_period_pct": 28.59,
+      "taiex_index_start": 130.89,
+      "taiex_index_end": 165.96,
+      "etf0050_index_start": 116.37,
+      "etf0050_index_end": 149.63
+    }
+  },
+  {
+    "period_start": 201012,
+    "period_end": 201106,
+    "index_start": 119.32,
+    "index_end": 119.4,
+    "period_return_pct": 0.07,
+    "threshold": 5.0,
+    "eligible_funds": 145,
+    "changes": [
+      {
+        "action": "換股",
+        "out": 97982984,
+        "out_name": "金鼎概念型基金",
+        "out_score": 19.53,
+        "in": 76941376,
+        "in_name": "匯豐成功基金",
+        "in_score": 33.85,
+        "gap": 14.32,
+        "threshold": 5.0
+      }
+    ],
+    "funds": [
+      {
+        "id": 76941376,
+        "name": "匯豐成功基金",
+        "score": 33.85,
+        "R1y": 25.91,
+        "R3y": 21.5,
+        "R5y": 72.25,
+        "nav_start": 27.75,
+        "nav_end": 29.35,
+        "return_pct": 5.77,
+        "is_new": true
+      },
+      {
+        "id": 81594690,
+        "name": "永豐永豐基金",
+        "score": 55.82,
+        "R1y": 17.7,
+        "R3y": 42.45,
+        "R5y": 171.17,
+        "nav_start": 29.53,
+        "nav_end": 28.83,
+        "return_pct": -2.37,
+        "is_new": false
+      },
+      {
+        "id": 13998344,
+        "name": "永豐中小基金",
+        "score": 35.31,
+        "R1y": 4.06,
+        "R3y": 24.72,
+        "R5y": 129.31,
+        "nav_start": 45.61,
+        "nav_end": 39.77,
+        "return_pct": -12.8,
+        "is_new": false
+      },
+      {
+        "id": 18033138,
+        "name": "德信數位時代基金",
+        "score": 26.05,
+        "R1y": 3.93,
+        "R3y": 24.98,
+        "R5y": 82.93,
+        "nav_start": 15.86,
+        "nav_end": 15.63,
+        "return_pct": -1.45,
+        "is_new": false
+      },
+      {
+        "id": 17605622,
+        "name": "統一大滿貫基金",
+        "score": 29.36,
+        "R1y": 12.67,
+        "R3y": 18.88,
+        "R5y": 86.83,
+        "nav_start": 17.88,
+        "nav_end": 19.88,
+        "return_pct": 11.19,
+        "is_new": false
+      }
+    ],
+    "benchmark": {
+      "taiex_period_pct": -3.05,
+      "etf0050_period_pct": -3.54,
+      "taiex_index_start": 165.96,
+      "taiex_index_end": 160.9,
+      "etf0050_index_start": 149.63,
+      "etf0050_index_end": 144.34
+    }
+  },
+  {
+    "period_start": 201106,
+    "period_end": 201112,
+    "index_start": 119.4,
+    "index_end": 97.42,
+    "period_return_pct": -18.41,
+    "threshold": 4.2,
+    "eligible_funds": 147,
+    "changes": [
+      {
+        "action": "換股",
+        "out": 13998344,
+        "out_name": "永豐中小基金",
+        "out_score": 18.04,
+        "in": 20089755,
+        "in_name": "富邦精銳中小基金",
+        "in_score": 48.02,
+        "gap": 29.97,
+        "threshold": 4.2
+      },
+      {
+        "action": "換股",
+        "out": 18033138,
+        "out_name": "德信數位時代基金",
+        "out_score": 33.8,
+        "in": 81585475,
+        "in_name": "富邦高成長基金",
+        "in_score": 47.0,
+        "gap": 13.2,
+        "threshold": 4.2
+      }
+    ],
+    "funds": [
+      {
+        "id": 76941376,
+        "name": "匯豐成功基金",
+        "score": 48.09,
+        "R1y": 38.9,
+        "R3y": 46.75,
+        "R5y": 73.05,
+        "nav_start": 29.35,
+        "nav_end": 26.05,
+        "return_pct": -11.24,
+        "is_new": false
+      },
+      {
+        "id": 81594690,
+        "name": "永豐永豐基金",
+        "score": 49.55,
+        "R1y": 26.34,
+        "R3y": 32.07,
+        "R5y": 133.82,
+        "nav_start": 28.83,
+        "nav_end": 23.98,
+        "return_pct": -16.82,
+        "is_new": false
+      },
+      {
+        "id": 81585475,
+        "name": "富邦高成長基金",
+        "score": 47.0,
+        "R1y": 35.62,
+        "R3y": 55.82,
+        "R5y": 62.21,
+        "nav_start": 18.2,
+        "nav_end": 13.78,
+        "return_pct": -24.29,
+        "is_new": true
+      },
+      {
+        "id": 17605622,
+        "name": "統一大滿貫基金",
+        "score": 58.93,
+        "R1y": 36.54,
+        "R3y": 57.53,
+        "R5y": 117.03,
+        "nav_start": 19.88,
+        "nav_end": 16.84,
+        "return_pct": -15.29,
+        "is_new": false
+      },
+      {
+        "id": 20089755,
+        "name": "富邦精銳中小基金",
+        "score": 48.02,
+        "R1y": 32.98,
+        "R3y": 70.85,
+        "R5y": 51.35,
+        "nav_start": 10.08,
+        "nav_end": 7.62,
+        "return_pct": -24.4,
+        "is_new": true
+      }
+    ],
+    "benchmark": {
+      "taiex_period_pct": -15.4,
+      "etf0050_period_pct": -12.7,
+      "taiex_index_start": 160.9,
+      "taiex_index_end": 136.12,
+      "etf0050_index_start": 144.34,
+      "etf0050_index_end": 126.01
+    }
+  },
+  {
+    "period_start": 201112,
+    "period_end": 201206,
+    "index_start": 97.42,
+    "index_end": 101.77,
+    "period_return_pct": 4.47,
+    "threshold": 3.7,
+    "eligible_funds": 146,
+    "changes": [
+      {
+        "action": "換股",
+        "out": 20089755,
+        "out_name": "富邦精銳中小基金",
+        "out_score": 16.84,
+        "in": 17153795,
+        "in_name": "富邦價值基金",
+        "in_score": 20.64,
+        "gap": 3.8,
+        "threshold": 3.7
+      }
+    ],
+    "funds": [
+      {
+        "id": 76941376,
+        "name": "匯豐成功基金",
+        "score": 28.01,
+        "R1y": -6.13,
+        "R3y": 83.19,
+        "R5y": 30.58,
+        "nav_start": 26.05,
+        "nav_end": 26.18,
+        "return_pct": 0.5,
+        "is_new": false
+      },
+      {
+        "id": 81594690,
+        "name": "永豐永豐基金",
+        "score": 22.7,
+        "R1y": -18.79,
+        "R3y": 71.16,
+        "R5y": 53.72,
+        "nav_start": 23.98,
+        "nav_end": 24.66,
+        "return_pct": 2.84,
+        "is_new": false
+      },
+      {
+        "id": 81585475,
+        "name": "富邦高成長基金",
+        "score": 18.48,
+        "R1y": -21.08,
+        "R3y": 96.86,
+        "R5y": -0.22,
+        "nav_start": 13.78,
+        "nav_end": 14.37,
+        "return_pct": 4.28,
+        "is_new": false
+      },
+      {
+        "id": 17153795,
+        "name": "富邦價值基金",
+        "score": 20.64,
+        "R1y": -12.7,
+        "R3y": 83.14,
+        "R5y": 10.22,
+        "nav_start": 14.23,
+        "nav_end": 14.84,
+        "return_pct": 4.29,
+        "is_new": true
+      },
+      {
+        "id": 17605622,
+        "name": "統一大滿貫基金",
+        "score": 40.38,
+        "R1y": -5.82,
+        "R3y": 106.63,
+        "R5y": 56.51,
+        "nav_start": 16.84,
+        "nav_end": 18.6,
+        "return_pct": 10.45,
+        "is_new": false
+      }
+    ],
+    "benchmark": {
+      "taiex_period_pct": 3.3,
+      "etf0050_period_pct": 1.1,
+      "taiex_index_start": 136.12,
+      "taiex_index_end": 140.61,
+      "etf0050_index_start": 126.01,
+      "etf0050_index_end": 127.4
+    }
+  },
+  {
+    "period_start": 201206,
+    "period_end": 201212,
+    "index_start": 101.77,
+    "index_end": 109.13,
+    "period_return_pct": 7.23,
+    "threshold": 2.73,
+    "eligible_funds": 149,
+    "changes": [
+      {
+        "action": "換股",
+        "out": 81585475,
+        "out_name": "富邦高成長基金",
+        "out_score": 2.05,
+        "in": 17604124,
+        "in_name": "德盛台灣大壩基金",
+        "in_score": 10.4,
+        "gap": 8.35,
+        "threshold": 2.73
+      },
+      {
+        "action": "換股",
+        "out": 17153795,
+        "out_name": "富邦價值基金",
+        "out_score": 3.23,
+        "in": 73989256,
+        "in_name": "景順台灣科技基金",
+        "in_score": 9.71,
+        "gap": 6.48,
+        "threshold": 2.73
+      }
+    ],
+    "funds": [
+      {
+        "id": 76941376,
+        "name": "匯豐成功基金",
+        "score": 9.67,
+        "R1y": -10.8,
+        "R3y": 42.44,
+        "R5y": 11.69,
+        "nav_start": 26.18,
+        "nav_end": 28.31,
+        "return_pct": 8.14,
+        "is_new": false
+      },
+      {
+        "id": 81594690,
+        "name": "永豐永豐基金",
+        "score": 6.49,
+        "R1y": -14.46,
+        "R3y": 19.3,
+        "R5y": 39.64,
+        "nav_start": 24.66,
+        "nav_end": 26.6,
+        "return_pct": 7.87,
+        "is_new": false
+      },
+      {
+        "id": 73989256,
+        "name": "景順台灣科技基金",
+        "score": 9.71,
+        "R1y": -3.6,
+        "R3y": 47.29,
+        "R5y": -13.38,
+        "nav_start": 21.43,
+        "nav_end": 22.2,
+        "return_pct": 3.59,
+        "is_new": true
+      },
+      {
+        "id": 17605622,
+        "name": "統一大滿貫基金",
+        "score": 22.66,
+        "R1y": -6.44,
+        "R3y": 65.19,
+        "R5y": 31.63,
+        "nav_start": 18.6,
+        "nav_end": 19.15,
+        "return_pct": 2.96,
+        "is_new": false
+      },
+      {
+        "id": 17604124,
+        "name": "德盛台灣大壩基金",
+        "score": 10.4,
+        "R1y": -2.73,
+        "R3y": 43.28,
+        "R5y": -6.08,
+        "nav_start": 9.27,
+        "nav_end": 10.53,
+        "return_pct": 13.59,
+        "is_new": true
+      }
+    ],
+    "benchmark": {
+      "taiex_period_pct": 9.34,
+      "etf0050_period_pct": 11.19,
+      "taiex_index_start": 140.61,
+      "taiex_index_end": 153.74,
+      "etf0050_index_start": 127.4,
+      "etf0050_index_end": 141.66
+    }
+  },
+  {
+    "period_start": 201212,
+    "period_end": 201306,
+    "index_start": 109.13,
+    "index_end": 119.77,
+    "period_return_pct": 9.75,
+    "threshold": 2.06,
+    "eligible_funds": 151,
+    "changes": [
+      {
+        "action": "換股",
+        "out": 73989256,
+        "out_name": "景順台灣科技基金",
+        "out_score": 9.07,
+        "in": 73982057,
+        "in_name": "宏利臺灣高股息基金",
+        "in_score": 16.08,
+        "gap": 7.01,
+        "threshold": 2.06
+      },
+      {
+        "action": "換股",
+        "out": 81594690,
+        "out_name": "永豐永豐基金",
+        "out_score": 12.93,
+        "in": 17146752,
+        "in_name": "安泰ING成長基金",
+        "in_score": 16.02,
+        "gap": 3.08,
+        "threshold": 2.06
+      }
+    ],
+    "funds": [
+      {
+        "id": 76941376,
+        "name": "匯豐成功基金",
+        "score": 17.66,
+        "R1y": 8.68,
+        "R3y": 28.45,
+        "R5y": 23.95,
+        "nav_start": 28.31,
+        "nav_end": 30.0,
+        "return_pct": 5.97,
+        "is_new": false
+      },
+      {
+        "id": 17146752,
+        "name": "安泰ING成長基金",
+        "score": 16.02,
+        "R1y": 20.83,
+        "R3y": 3.76,
+        "R5y": 22.37,
+        "nav_start": 16.3,
+        "nav_end": 18.67,
+        "return_pct": 14.54,
+        "is_new": true
+      },
+      {
+        "id": 73982057,
+        "name": "宏利臺灣高股息基金",
+        "score": 16.08,
+        "R1y": 19.97,
+        "R3y": 13.36,
+        "R5y": 10.44,
+        "nav_start": 15.02,
+        "nav_end": 16.68,
+        "return_pct": 11.05,
+        "is_new": true
+      },
+      {
+        "id": 17605622,
+        "name": "統一大滿貫基金",
+        "score": 18.52,
+        "R1y": 13.72,
+        "R3y": 20.67,
+        "R5y": 27.33,
+        "nav_start": 19.15,
+        "nav_end": 20.06,
+        "return_pct": 4.75,
+        "is_new": false
+      },
+      {
+        "id": 17604124,
+        "name": "德盛台灣大壩基金",
+        "score": 23.78,
+        "R1y": 26.87,
+        "R3y": 25.66,
+        "R5y": 13.23,
+        "nav_start": 10.53,
+        "nav_end": 11.84,
+        "return_pct": 12.44,
+        "is_new": false
+      }
+    ],
+    "benchmark": {
+      "taiex_period_pct": 4.83,
+      "etf0050_period_pct": 3.95,
+      "taiex_index_start": 153.74,
+      "taiex_index_end": 161.16,
+      "etf0050_index_start": 141.66,
+      "etf0050_index_end": 147.25
+    }
+  },
+  {
     "period_start": 201306,
     "period_end": 201312,
-    "index_start": 100.0,
-    "index_end": 112.14,
+    "index_start": 119.77,
+    "index_end": 134.31,
     "period_return_pct": 12.14,
     "threshold": 2.76,
     "eligible_funds": 151,
     "changes": [
       {
-        "action": "初始建倉",
-        "in": 17604124,
-        "in_name": "德盛台灣大壩基金",
-        "in_score": 42.97
-      },
-      {
-        "action": "初始建倉",
+        "action": "換股",
+        "out": 17605622,
+        "out_name": "統一大滿貫基金",
+        "out_score": 27.05,
         "in": 18488469,
         "in_name": "安泰ING中小基金",
-        "in_score": 41.22
+        "in_score": 41.22,
+        "gap": 14.18,
+        "threshold": 2.76
       },
       {
-        "action": "初始建倉",
+        "action": "換股",
+        "out": 76941376,
+        "out_name": "匯豐成功基金",
+        "out_score": 29.89,
         "in": 968493,
         "in_name": "安泰ING鴻運基金",
-        "in_score": 39.6
-      },
-      {
-        "action": "初始建倉",
-        "in": 17146752,
-        "in_name": "安泰ING成長基金",
-        "in_score": 36.95
-      },
-      {
-        "action": "初始建倉",
-        "in": 73982057,
-        "in_name": "宏利臺灣高股息基金",
-        "in_score": 36.34
+        "in_score": 39.6,
+        "gap": 9.71,
+        "threshold": 2.76
       }
     ],
     "funds": [
       {
-        "id": 17604124,
-        "name": "德盛台灣大壩基金",
-        "score": 42.97,
-        "R1y": 27.72,
-        "R3y": 61.97,
-        "R5y": 52.58,
-        "nav_start": 11.84,
-        "nav_end": 13.42,
-        "return_pct": 13.34,
+        "id": 17146752,
+        "name": "安泰ING成長基金",
+        "score": 36.95,
+        "R1y": 27.18,
+        "R3y": 36.78,
+        "R5y": 61.65,
+        "nav_start": 18.67,
+        "nav_end": 21.35,
+        "return_pct": 14.35,
+        "is_new": false
+      },
+      {
+        "id": 73982057,
+        "name": "宏利臺灣高股息基金",
+        "score": 36.34,
+        "R1y": 24.66,
+        "R3y": 41.0,
+        "R5y": 58.56,
+        "nav_start": 16.68,
+        "nav_end": 18.86,
+        "return_pct": 13.07,
+        "is_new": false
+      },
+      {
+        "id": 968493,
+        "name": "安泰ING鴻運基金",
+        "score": 39.6,
+        "R1y": 31.82,
+        "R3y": 42.49,
+        "R5y": 54.68,
+        "nav_start": 13.38,
+        "nav_end": 14.82,
+        "return_pct": 10.76,
         "is_new": true
       },
       {
@@ -65,56 +1656,32 @@
         "is_new": true
       },
       {
-        "id": 968493,
-        "name": "安泰ING鴻運基金",
-        "score": 39.6,
-        "R1y": 31.82,
-        "R3y": 42.49,
-        "R5y": 54.68,
-        "nav_start": 13.38,
-        "nav_end": 14.82,
-        "return_pct": 10.76,
-        "is_new": true
-      },
-      {
-        "id": 17146752,
-        "name": "安泰ING成長基金",
-        "score": 36.95,
-        "R1y": 27.18,
-        "R3y": 36.78,
-        "R5y": 61.65,
-        "nav_start": 18.67,
-        "nav_end": 21.35,
-        "return_pct": 14.35,
-        "is_new": true
-      },
-      {
-        "id": 73982057,
-        "name": "宏利臺灣高股息基金",
-        "score": 36.34,
-        "R1y": 24.66,
-        "R3y": 41.0,
-        "R5y": 58.56,
-        "nav_start": 16.68,
-        "nav_end": 18.86,
-        "return_pct": 13.07,
-        "is_new": true
+        "id": 17604124,
+        "name": "德盛台灣大壩基金",
+        "score": 42.97,
+        "R1y": 27.72,
+        "R3y": 61.97,
+        "R5y": 52.58,
+        "nav_start": 11.84,
+        "nav_end": 13.42,
+        "return_pct": 13.34,
+        "is_new": false
       }
     ],
     "benchmark": {
       "taiex_period_pct": 9.83,
       "etf0050_period_pct": 7.35,
-      "taiex_index_start": 100.0,
-      "taiex_index_end": 109.83,
-      "etf0050_index_start": 100.0,
-      "etf0050_index_end": 107.35
+      "taiex_index_start": 161.16,
+      "taiex_index_end": 177.01,
+      "etf0050_index_start": 147.25,
+      "etf0050_index_end": 158.07
     }
   },
   {
     "period_start": 201312,
     "period_end": 201406,
-    "index_start": 112.14,
-    "index_end": 128.34,
+    "index_start": 134.31,
+    "index_end": 153.71,
     "period_return_pct": 14.45,
     "threshold": 3.7,
     "eligible_funds": 152,
@@ -207,20 +1774,20 @@
     "benchmark": {
       "taiex_period_pct": 9.4,
       "etf0050_period_pct": 12.16,
-      "taiex_index_start": 109.83,
-      "taiex_index_end": 120.16,
-      "etf0050_index_start": 107.35,
-      "etf0050_index_end": 120.41
+      "taiex_index_start": 177.01,
+      "taiex_index_end": 193.66,
+      "etf0050_index_start": 158.07,
+      "etf0050_index_end": 177.3
     }
   },
   {
     "period_start": 201406,
     "period_end": 201412,
-    "index_start": 128.34,
-    "index_end": 119.91,
+    "index_start": 153.71,
+    "index_end": 143.62,
     "period_return_pct": -6.57,
     "threshold": 4.61,
-    "eligible_funds": 145,
+    "eligible_funds": 143,
     "changes": [
       {
         "action": "換股",
@@ -321,20 +1888,20 @@
     "benchmark": {
       "taiex_period_pct": 1.82,
       "etf0050_period_pct": 4.28,
-      "taiex_index_start": 120.16,
-      "taiex_index_end": 122.34,
-      "etf0050_index_start": 120.41,
-      "etf0050_index_end": 125.56
+      "taiex_index_start": 193.66,
+      "taiex_index_end": 197.18,
+      "etf0050_index_start": 177.3,
+      "etf0050_index_end": 184.88
     }
   },
   {
     "period_start": 201412,
     "period_end": 201506,
-    "index_start": 119.91,
-    "index_end": 131.17,
+    "index_start": 143.62,
+    "index_end": 157.11,
     "period_return_pct": 9.39,
     "threshold": 3.16,
-    "eligible_funds": 143,
+    "eligible_funds": 141,
     "changes": [
       {
         "action": "換股",
@@ -424,20 +1991,20 @@
     "benchmark": {
       "taiex_period_pct": 0.95,
       "etf0050_period_pct": 3.78,
-      "taiex_index_start": 122.34,
-      "taiex_index_end": 123.51,
-      "etf0050_index_start": 125.56,
-      "etf0050_index_end": 130.31
+      "taiex_index_start": 197.18,
+      "taiex_index_end": 199.05,
+      "etf0050_index_start": 184.88,
+      "etf0050_index_end": 191.87
     }
   },
   {
     "period_start": 201506,
     "period_end": 201512,
-    "index_start": 131.17,
-    "index_end": 118.32,
+    "index_start": 157.11,
+    "index_end": 141.72,
     "period_return_pct": -9.8,
     "threshold": 2.93,
-    "eligible_funds": 142,
+    "eligible_funds": 140,
     "changes": [
       {
         "action": "換股",
@@ -527,20 +2094,20 @@
     "benchmark": {
       "taiex_period_pct": -7.75,
       "etf0050_period_pct": -9.5,
-      "taiex_index_start": 123.51,
-      "taiex_index_end": 113.94,
-      "etf0050_index_start": 130.31,
-      "etf0050_index_end": 117.93
+      "taiex_index_start": 199.05,
+      "taiex_index_end": 183.63,
+      "etf0050_index_start": 191.87,
+      "etf0050_index_end": 173.64
     }
   },
   {
     "period_start": 201512,
     "period_end": 201606,
-    "index_start": 118.32,
-    "index_end": 129.27,
+    "index_start": 141.72,
+    "index_end": 154.83,
     "period_return_pct": 9.26,
-    "threshold": 2.16,
-    "eligible_funds": 141,
+    "threshold": 2.24,
+    "eligible_funds": 140,
     "changes": [
       {
         "action": "換股",
@@ -551,7 +2118,7 @@
         "in_name": "台新中國通基金",
         "in_score": 38.27,
         "gap": 12.45,
-        "threshold": 2.16
+        "threshold": 2.24
       },
       {
         "action": "換股",
@@ -562,7 +2129,7 @@
         "in_name": "德信數位時代基金",
         "in_score": 36.27,
         "gap": 6.61,
-        "threshold": 2.16
+        "threshold": 2.24
       },
       {
         "action": "換股",
@@ -573,7 +2140,7 @@
         "in_name": "永豐領航科技基金",
         "in_score": 36.06,
         "gap": 6.09,
-        "threshold": 2.16
+        "threshold": 2.24
       }
     ],
     "funds": [
@@ -641,20 +2208,20 @@
     "benchmark": {
       "taiex_period_pct": 5.09,
       "etf0050_period_pct": 7.15,
-      "taiex_index_start": 113.94,
-      "taiex_index_end": 119.73,
-      "etf0050_index_start": 117.93,
-      "etf0050_index_end": 126.36
+      "taiex_index_start": 183.63,
+      "taiex_index_end": 192.97,
+      "etf0050_index_start": 173.64,
+      "etf0050_index_end": 186.06
     }
   },
   {
     "period_start": 201606,
     "period_end": 201612,
-    "index_start": 129.27,
-    "index_end": 131.45,
+    "index_start": 154.83,
+    "index_end": 157.44,
     "period_return_pct": 1.69,
     "threshold": 3.2,
-    "eligible_funds": 144,
+    "eligible_funds": 143,
     "changes": [
       {
         "action": "換股",
@@ -733,20 +2300,20 @@
     "benchmark": {
       "taiex_period_pct": 10.0,
       "etf0050_period_pct": 10.74,
-      "taiex_index_start": 119.73,
-      "taiex_index_end": 131.7,
-      "etf0050_index_start": 126.36,
-      "etf0050_index_end": 139.94
+      "taiex_index_start": 192.97,
+      "taiex_index_end": 212.25,
+      "etf0050_index_start": 186.06,
+      "etf0050_index_end": 206.05
     }
   },
   {
     "period_start": 201612,
     "period_end": 201706,
-    "index_start": 131.45,
-    "index_end": 144.49,
+    "index_start": 157.44,
+    "index_end": 173.06,
     "period_return_pct": 9.92,
     "threshold": 2.85,
-    "eligible_funds": 141,
+    "eligible_funds": 140,
     "changes": [
       {
         "action": "換股",
@@ -836,20 +2403,20 @@
     "benchmark": {
       "taiex_period_pct": 13.38,
       "etf0050_period_pct": 14.81,
-      "taiex_index_start": 131.7,
-      "taiex_index_end": 149.33,
-      "etf0050_index_start": 139.94,
-      "etf0050_index_end": 160.66
+      "taiex_index_start": 212.25,
+      "taiex_index_end": 240.66,
+      "etf0050_index_start": 206.05,
+      "etf0050_index_end": 236.56
     }
   },
   {
     "period_start": 201706,
     "period_end": 201712,
-    "index_start": 144.49,
-    "index_end": 171.15,
+    "index_start": 173.06,
+    "index_end": 204.99,
     "period_return_pct": 18.45,
     "threshold": 2.16,
-    "eligible_funds": 141,
+    "eligible_funds": 140,
     "changes": [
       {
         "action": "換股",
@@ -939,20 +2506,20 @@
     "benchmark": {
       "taiex_period_pct": 5.41,
       "etf0050_period_pct": 3.12,
-      "taiex_index_start": 149.33,
-      "taiex_index_end": 157.41,
-      "etf0050_index_start": 160.66,
-      "etf0050_index_end": 165.68
+      "taiex_index_start": 240.66,
+      "taiex_index_end": 253.69,
+      "etf0050_index_start": 236.56,
+      "etf0050_index_end": 243.96
     }
   },
   {
     "period_start": 201712,
     "period_end": 201806,
-    "index_start": 171.15,
-    "index_end": 209.06,
+    "index_start": 204.99,
+    "index_end": 250.39,
     "period_return_pct": 22.15,
     "threshold": 4.68,
-    "eligible_funds": 138,
+    "eligible_funds": 137,
     "changes": [
       {
         "action": "換股",
@@ -1053,20 +2620,20 @@
     "benchmark": {
       "taiex_period_pct": 2.8,
       "etf0050_period_pct": 1.61,
-      "taiex_index_start": 157.41,
-      "taiex_index_end": 161.81,
-      "etf0050_index_start": 165.68,
-      "etf0050_index_end": 168.34
+      "taiex_index_start": 253.69,
+      "taiex_index_end": 260.79,
+      "etf0050_index_start": 243.96,
+      "etf0050_index_end": 247.88
     }
   },
   {
     "period_start": 201806,
     "period_end": 201812,
-    "index_start": 209.06,
-    "index_end": 155.09,
+    "index_start": 250.39,
+    "index_end": 185.75,
     "period_return_pct": -25.82,
     "threshold": 7.6,
-    "eligible_funds": 137,
+    "eligible_funds": 131,
     "changes": [
       {
         "action": "換股",
@@ -1145,20 +2712,20 @@
     "benchmark": {
       "taiex_period_pct": -7.42,
       "etf0050_period_pct": -6.4,
-      "taiex_index_start": 161.81,
-      "taiex_index_end": 149.81,
-      "etf0050_index_start": 168.34,
-      "etf0050_index_end": 157.58
+      "taiex_index_start": 260.79,
+      "taiex_index_end": 241.45,
+      "etf0050_index_start": 247.88,
+      "etf0050_index_end": 232.03
     }
   },
   {
     "period_start": 201812,
     "period_end": 201906,
-    "index_start": 155.09,
-    "index_end": 177.82,
+    "index_start": 185.75,
+    "index_end": 212.98,
     "period_return_pct": 14.66,
-    "threshold": 4.65,
-    "eligible_funds": 135,
+    "threshold": 4.8,
+    "eligible_funds": 123,
     "changes": [
       {
         "action": "換股",
@@ -1169,7 +2736,7 @@
         "in_name": "安聯台灣大壩基金",
         "in_score": 37.25,
         "gap": 21.24,
-        "threshold": 4.65
+        "threshold": 4.8
       },
       {
         "action": "換股",
@@ -1180,7 +2747,7 @@
         "in_name": "安聯台灣智慧基金",
         "in_score": 31.72,
         "gap": 9.28,
-        "threshold": 4.65
+        "threshold": 4.8
       }
     ],
     "funds": [
@@ -1248,20 +2815,20 @@
     "benchmark": {
       "taiex_period_pct": 11.43,
       "etf0050_period_pct": 10.52,
-      "taiex_index_start": 149.81,
-      "taiex_index_end": 166.93,
-      "etf0050_index_start": 157.58,
-      "etf0050_index_end": 174.15
+      "taiex_index_start": 241.45,
+      "taiex_index_end": 269.04,
+      "etf0050_index_start": 232.03,
+      "etf0050_index_end": 256.43
     }
   },
   {
     "period_start": 201906,
     "period_end": 201912,
-    "index_start": 177.82,
-    "index_end": 217.44,
-    "period_return_pct": 22.28,
+    "index_start": 212.98,
+    "index_end": 247.16,
+    "period_return_pct": 16.05,
     "threshold": 5.58,
-    "eligible_funds": 128,
+    "eligible_funds": 114,
     "changes": [
       {
         "action": "換股",
@@ -1338,70 +2905,61 @@
       {
         "id": 17604124,
         "name": "安聯台灣大壩基金",
-        "score": 40.76,
-        "R1y": 2.08,
-        "R3y": 77.78,
-        "R5y": 81.95,
-        "nav_start": 29.44,
-        "nav_end": 38.61,
-        "return_pct": 31.15,
-        "is_new": false
+        "nav_start": null,
+        "nav_end": null,
+        "return_pct": 0
       }
     ],
     "benchmark": {
       "taiex_period_pct": 15.7,
       "etf0050_period_pct": 20.32,
-      "taiex_index_start": 166.93,
-      "taiex_index_end": 193.14,
-      "etf0050_index_start": 174.15,
-      "etf0050_index_end": 209.53
+      "taiex_index_start": 269.04,
+      "taiex_index_end": 311.27,
+      "etf0050_index_start": 256.43,
+      "etf0050_index_end": 308.53
     }
   },
   {
     "period_start": 201912,
     "period_end": 202006,
-    "index_start": 217.44,
-    "index_end": 231.22,
-    "period_return_pct": 6.34,
-    "threshold": 9.29,
-    "eligible_funds": 125,
+    "index_start": 247.16,
+    "index_end": 260.18,
+    "period_return_pct": 5.27,
+    "threshold": 9.12,
+    "eligible_funds": 106,
     "changes": [
+      {
+        "action": "強制補位（基金消滅）",
+        "out": 17604124,
+        "out_name": "17604124",
+        "in": 48934304,
+        "in_name": "統一台灣動力基金",
+        "in_score": 78.48
+      },
       {
         "action": "換股",
         "out": 76941376,
         "out_name": "匯豐成功基金",
         "out_score": 20.08,
-        "in": 48934304,
-        "in_name": "統一台灣動力基金",
-        "in_score": 78.48,
-        "gap": 58.4,
-        "threshold": 9.29
+        "in": 17600534,
+        "in_name": "野村高科技基金",
+        "in_score": 70.24,
+        "gap": 50.16,
+        "threshold": 9.12
       },
       {
         "action": "換股",
         "out": 19330712,
         "out_name": "貝萊德寶利基金",
         "out_score": 52.3,
-        "in": 81584975,
-        "in_name": "日盛上選基金(A類型)",
-        "in_score": 73.01,
-        "gap": 20.71,
-        "threshold": 9.29
+        "in": 17607591,
+        "in_name": "日盛高科技基金",
+        "in_score": 70.05,
+        "gap": 17.75,
+        "threshold": 9.12
       }
     ],
     "funds": [
-      {
-        "id": 48934304,
-        "name": "統一台灣動力基金",
-        "score": 78.48,
-        "R1y": 56.82,
-        "R3y": 104.49,
-        "R5y": 93.62,
-        "nav_start": 23.68,
-        "nav_end": 24.84,
-        "return_pct": 4.9,
-        "is_new": true
-      },
       {
         "id": 18480065,
         "name": "安聯台灣科技基金",
@@ -1415,15 +2973,39 @@
         "is_new": false
       },
       {
-        "id": 81584975,
-        "name": "日盛上選基金(A類型)",
-        "score": 73.01,
-        "R1y": 47.94,
-        "R3y": 97.41,
-        "R5y": 99.1,
-        "nav_start": 41.91,
-        "nav_end": 43.21,
-        "return_pct": 3.1,
+        "id": 48934304,
+        "name": "統一台灣動力基金",
+        "score": 78.48,
+        "R1y": 56.82,
+        "R3y": 104.49,
+        "R5y": 93.62,
+        "nav_start": 23.68,
+        "nav_end": 24.84,
+        "return_pct": 4.9,
+        "is_new": true
+      },
+      {
+        "id": 17607591,
+        "name": "日盛高科技基金",
+        "score": 70.05,
+        "R1y": 41.62,
+        "R3y": 93.85,
+        "R5y": 105.41,
+        "nav_start": 22.39,
+        "nav_end": 23.51,
+        "return_pct": 5.0,
+        "is_new": true
+      },
+      {
+        "id": 17600534,
+        "name": "野村高科技基金",
+        "score": 70.24,
+        "R1y": 57.16,
+        "R3y": 77.78,
+        "R5y": 91.63,
+        "nav_start": 13.28,
+        "nav_end": 13.53,
+        "return_pct": 1.88,
         "is_new": true
       },
       {
@@ -1437,41 +3019,36 @@
         "nav_end": 50.37,
         "return_pct": 9.03,
         "is_new": false
-      },
-      {
-        "id": 17604124,
-        "name": "安聯台灣大壩基金-A類型-新臺幣",
-        "score": 91.88,
-        "R1y": 53.34,
-        "R3y": 116.67,
-        "R5y": 151.04,
-        "nav_start": 38.61,
-        "nav_end": 42.14,
-        "return_pct": 9.14,
-        "is_new": false
       }
     ],
     "benchmark": {
       "taiex_period_pct": -2.33,
       "etf0050_period_pct": -4.16,
-      "taiex_index_start": 193.14,
-      "taiex_index_end": 188.63,
-      "etf0050_index_start": 209.53,
-      "etf0050_index_end": 200.81
+      "taiex_index_start": 311.27,
+      "taiex_index_end": 304.01,
+      "etf0050_index_start": 308.53,
+      "etf0050_index_end": 295.69
     }
   },
   {
     "period_start": 202006,
     "period_end": 202012,
-    "index_start": 231.22,
-    "index_end": 278.53,
-    "period_return_pct": 20.46,
-    "threshold": 8.07,
-    "eligible_funds": 125,
+    "index_start": 260.18,
+    "index_end": 314.25,
+    "period_return_pct": 20.78,
+    "threshold": 7.88,
+    "eligible_funds": 105,
     "changes": [
       {
-        "action": "全員衛冕",
-        "threshold": 8.07
+        "action": "換股",
+        "out": 17600534,
+        "out_name": "野村高科技基金",
+        "out_score": 49.29,
+        "in": 94991068,
+        "in_name": "日盛新台商基金",
+        "in_score": 60.86,
+        "gap": 11.57,
+        "threshold": 7.88
       }
     ],
     "funds": [
@@ -1500,15 +3077,15 @@
         "is_new": false
       },
       {
-        "id": 81584975,
-        "name": "日盛上選基金(A類型)",
-        "score": 55.96,
-        "R1y": 29.06,
-        "R3y": 75.86,
-        "R5y": 93.33,
-        "nav_start": 43.21,
-        "nav_end": 51.41,
-        "return_pct": 18.98,
+        "id": 17607591,
+        "name": "日盛高科技基金",
+        "score": 61.46,
+        "R1y": 33.81,
+        "R3y": 76.5,
+        "R5y": 108.05,
+        "nav_start": 23.51,
+        "nav_end": 28.4,
+        "return_pct": 20.8,
         "is_new": false
       },
       {
@@ -1524,60 +3101,72 @@
         "is_new": false
       },
       {
-        "id": 17604124,
-        "name": "安聯台灣大壩基金-A類型-新臺幣",
-        "score": 82.85,
-        "R1y": 43.14,
-        "R3y": 106.06,
-        "R5y": 147.3,
-        "nav_start": 42.14,
-        "nav_end": 49.66,
-        "return_pct": 17.85,
-        "is_new": false
+        "id": 94991068,
+        "name": "日盛新台商基金",
+        "score": 60.86,
+        "R1y": 36.03,
+        "R3y": 75.75,
+        "R5y": 100.61,
+        "nav_start": 52.48,
+        "nav_end": 61.73,
+        "return_pct": 17.63,
+        "is_new": true
       }
     ],
     "benchmark": {
       "taiex_period_pct": 30.16,
       "etf0050_period_pct": 37.35,
-      "taiex_index_start": 188.63,
-      "taiex_index_end": 245.52,
-      "etf0050_index_start": 200.81,
-      "etf0050_index_end": 275.81
+      "taiex_index_start": 304.01,
+      "taiex_index_end": 395.7,
+      "etf0050_index_start": 295.69,
+      "etf0050_index_end": 406.12
     }
   },
   {
     "period_start": 202012,
     "period_end": 202106,
-    "index_start": 278.53,
-    "index_end": 367.66,
-    "period_return_pct": 32.0,
-    "threshold": 7.92,
-    "eligible_funds": 125,
+    "index_start": 314.25,
+    "index_end": 402.47,
+    "period_return_pct": 28.07,
+    "threshold": 7.77,
+    "eligible_funds": 104,
     "changes": [
       {
         "action": "換股",
         "out": 48934304,
         "out_name": "統一台灣動力基金",
         "out_score": 58.77,
-        "in": 19330754,
-        "in_name": "野村優質基金-累積類型新臺幣計價",
-        "in_score": 87.75,
-        "gap": 28.97,
-        "threshold": 7.92
-      },
-      {
-        "action": "換股",
-        "out": 81584975,
-        "out_name": "日盛上選基金(A類型)",
-        "out_score": 63.45,
         "in": 1031564,
         "in_name": "野村積極成長基金",
         "in_score": 73.86,
-        "gap": 10.41,
-        "threshold": 7.92
+        "gap": 15.08,
+        "threshold": 7.77
+      },
+      {
+        "action": "換股",
+        "out": 94991068,
+        "out_name": "日盛新台商基金",
+        "out_score": 63.88,
+        "in": 17146752,
+        "in_name": "野村成長基金",
+        "in_score": 72.82,
+        "gap": 8.95,
+        "threshold": 7.77
       }
     ],
     "funds": [
+      {
+        "id": 17146752,
+        "name": "野村成長基金",
+        "score": 72.82,
+        "R1y": 42.61,
+        "R3y": 85.24,
+        "R5y": 129.71,
+        "nav_start": 54.35,
+        "nav_end": 72.11,
+        "return_pct": 32.68,
+        "is_new": true
+      },
       {
         "id": 18480065,
         "name": "安聯台灣科技基金",
@@ -1591,16 +3180,16 @@
         "is_new": false
       },
       {
-        "id": 19330754,
-        "name": "野村優質基金-累積類型新臺幣計價",
-        "score": 87.75,
-        "R1y": 51.17,
-        "R3y": 102.39,
-        "R5y": 157.23,
-        "nav_start": 70.43,
-        "nav_end": 89.8,
-        "return_pct": 27.5,
-        "is_new": true
+        "id": 17607591,
+        "name": "日盛高科技基金",
+        "score": 68.93,
+        "R1y": 26.84,
+        "R3y": 75.42,
+        "R5y": 164.43,
+        "nav_start": 28.4,
+        "nav_end": 32.72,
+        "return_pct": 15.21,
+        "is_new": false
       },
       {
         "id": 1031564,
@@ -1625,44 +3214,51 @@
         "nav_end": 82.83,
         "return_pct": 35.1,
         "is_new": false
-      },
-      {
-        "id": 17604124,
-        "name": "安聯台灣大壩基金-A類型-新臺幣",
-        "score": 88.64,
-        "R1y": 28.62,
-        "R3y": 103.69,
-        "R5y": 216.1,
-        "nav_start": 49.66,
-        "nav_end": 69.54,
-        "return_pct": 40.03,
-        "is_new": false
       }
     ],
     "benchmark": {
       "taiex_period_pct": 21.09,
       "etf0050_period_pct": 15.95,
-      "taiex_index_start": 245.52,
-      "taiex_index_end": 297.3,
-      "etf0050_index_start": 275.81,
-      "etf0050_index_end": 319.81
+      "taiex_index_start": 395.7,
+      "taiex_index_end": 479.14,
+      "etf0050_index_start": 406.12,
+      "etf0050_index_end": 470.91
     }
   },
   {
     "period_start": 202106,
     "period_end": 202112,
-    "index_start": 367.66,
-    "index_end": 452.55,
-    "period_return_pct": 23.09,
-    "threshold": 7.77,
-    "eligible_funds": 124,
+    "index_start": 402.47,
+    "index_end": 488.52,
+    "period_return_pct": 21.38,
+    "threshold": 8.11,
+    "eligible_funds": 103,
     "changes": [
       {
-        "action": "全員衛冕",
-        "threshold": 7.77
+        "action": "換股",
+        "out": 17607591,
+        "out_name": "日盛高科技基金",
+        "out_score": 74.35,
+        "in": 92002244,
+        "in_name": "統一黑馬基金",
+        "in_score": 124.39,
+        "gap": 50.04,
+        "threshold": 8.11
       }
     ],
     "funds": [
+      {
+        "id": 17146752,
+        "name": "野村成長基金",
+        "score": 120.49,
+        "R1y": 72.59,
+        "R3y": 150.12,
+        "R5y": 195.78,
+        "nav_start": 72.11,
+        "nav_end": 85.39,
+        "return_pct": 18.42,
+        "is_new": false
+      },
       {
         "id": 18480065,
         "name": "安聯台灣科技基金",
@@ -1676,16 +3272,16 @@
         "is_new": false
       },
       {
-        "id": 19330754,
-        "name": "野村優質基金-累積類型新臺幣計價",
-        "score": 124.01,
-        "R1y": 71.57,
-        "R3y": 148.62,
-        "R5y": 218.21,
-        "nav_start": 89.8,
-        "nav_end": 111.88,
-        "return_pct": 24.59,
-        "is_new": false
+        "id": 92002244,
+        "name": "統一黑馬基金",
+        "score": 124.39,
+        "R1y": 92.48,
+        "R3y": 104.51,
+        "R5y": 234.0,
+        "nav_start": 139.68,
+        "nav_end": 160.42,
+        "return_pct": 14.85,
+        "is_new": true
       },
       {
         "id": 1031564,
@@ -1710,48 +3306,36 @@
         "nav_end": 100.54,
         "return_pct": 21.38,
         "is_new": false
-      },
-      {
-        "id": 17604124,
-        "name": "安聯台灣大壩基金-A類型-新臺幣",
-        "score": 138.83,
-        "R1y": 65.02,
-        "R3y": 141.12,
-        "R5y": 319.93,
-        "nav_start": 69.54,
-        "nav_end": 81.5,
-        "return_pct": 17.2,
-        "is_new": false
       }
     ],
     "benchmark": {
       "taiex_period_pct": 4.93,
       "etf0050_period_pct": 5.01,
-      "taiex_index_start": 297.3,
-      "taiex_index_end": 311.97,
-      "etf0050_index_start": 319.81,
-      "etf0050_index_end": 335.85
+      "taiex_index_start": 479.14,
+      "taiex_index_end": 502.78,
+      "etf0050_index_start": 470.91,
+      "etf0050_index_end": 494.52
     }
   },
   {
     "period_start": 202112,
     "period_end": 202206,
-    "index_start": 452.55,
-    "index_end": 323.8,
-    "period_return_pct": -28.45,
-    "threshold": 11.79,
-    "eligible_funds": 124,
+    "index_start": 488.52,
+    "index_end": 356.35,
+    "period_return_pct": -27.05,
+    "threshold": 11.65,
+    "eligible_funds": 99,
     "changes": [
       {
         "action": "換股",
-        "out": 1031564,
-        "out_name": "野村積極成長基金",
-        "out_score": 142.49,
+        "out": 17146752,
+        "out_name": "野村成長基金",
+        "out_score": 142.45,
         "in": 73990253,
         "in_name": "統一奔騰基金",
         "in_score": 164.22,
-        "gap": 21.73,
-        "threshold": 11.79
+        "gap": 21.77,
+        "threshold": 11.65
       }
     ],
     "funds": [
@@ -1768,15 +3352,27 @@
         "is_new": false
       },
       {
-        "id": 19330754,
-        "name": "野村優質基金-累積類型新臺幣計價",
-        "score": 171.15,
-        "R1y": 58.85,
-        "R3y": 280.8,
-        "R5y": 287.4,
-        "nav_start": 111.88,
-        "nav_end": 77.71,
-        "return_pct": -30.54,
+        "id": 92002244,
+        "name": "統一黑馬基金",
+        "score": 161.45,
+        "R1y": 82.15,
+        "R3y": 211.43,
+        "R5y": 284.7,
+        "nav_start": 160.42,
+        "nav_end": 120.78,
+        "return_pct": -24.71,
+        "is_new": false
+      },
+      {
+        "id": 1031564,
+        "name": "野村積極成長基金",
+        "score": 142.49,
+        "R1y": 56.17,
+        "R3y": 223.12,
+        "R5y": 237.32,
+        "nav_start": 36.06,
+        "nav_end": 25.27,
+        "return_pct": -29.92,
         "is_new": false
       },
       {
@@ -1802,41 +3398,29 @@
         "nav_end": 72.15,
         "return_pct": -28.24,
         "is_new": false
-      },
-      {
-        "id": 17604124,
-        "name": "安聯台灣大壩基金-A類型-新臺幣",
-        "score": 170.63,
-        "R1y": 64.12,
-        "R3y": 223.67,
-        "R5y": 357.35,
-        "nav_start": 81.5,
-        "nav_end": 56.18,
-        "return_pct": -31.07,
-        "is_new": false
       }
     ],
     "benchmark": {
       "taiex_period_pct": -17.11,
       "etf0050_period_pct": -19.08,
-      "taiex_index_start": 311.97,
-      "taiex_index_end": 258.59,
-      "etf0050_index_start": 335.85,
-      "etf0050_index_end": 271.76
+      "taiex_index_start": 502.78,
+      "taiex_index_end": 416.76,
+      "etf0050_index_start": 494.52,
+      "etf0050_index_end": 400.16
     }
   },
   {
     "period_start": 202206,
     "period_end": 202212,
-    "index_start": 323.8,
-    "index_end": 311.09,
-    "period_return_pct": -3.93,
-    "threshold": 6.31,
-    "eligible_funds": 124,
+    "index_start": 356.35,
+    "index_end": 351.15,
+    "period_return_pct": -1.46,
+    "threshold": 6.59,
+    "eligible_funds": 99,
     "changes": [
       {
         "action": "全員衛冕",
-        "threshold": 6.31
+        "threshold": 6.59
       }
     ],
     "funds": [
@@ -1853,15 +3437,27 @@
         "is_new": false
       },
       {
-        "id": 19330754,
-        "name": "野村優質基金-累積類型新臺幣計價",
-        "score": 56.08,
-        "R1y": -13.46,
-        "R3y": 123.63,
-        "R5y": 128.63,
-        "nav_start": 77.71,
-        "nav_end": 76.85,
-        "return_pct": -1.11,
+        "id": 92002244,
+        "name": "統一黑馬基金",
+        "score": 58.51,
+        "R1y": -13.53,
+        "R3y": 112.3,
+        "R5y": 157.91,
+        "nav_start": 120.78,
+        "nav_end": 122.05,
+        "return_pct": 1.05,
+        "is_new": false
+      },
+      {
+        "id": 1031564,
+        "name": "野村積極成長基金",
+        "score": 44.87,
+        "R1y": -17.04,
+        "R3y": 103.3,
+        "R5y": 112.0,
+        "nav_start": 25.27,
+        "nav_end": 25.63,
+        "return_pct": 1.42,
         "is_new": false
       },
       {
@@ -1887,48 +3483,29 @@
         "nav_end": 67.63,
         "return_pct": -6.26,
         "is_new": false
-      },
-      {
-        "id": 17604124,
-        "name": "安聯台灣大壩基金-A類型-新臺幣",
-        "score": 52.59,
-        "R1y": -19.21,
-        "R3y": 90.83,
-        "R5y": 174.72,
-        "nav_start": 56.18,
-        "nav_end": 51.27,
-        "return_pct": -8.74,
-        "is_new": false
       }
     ],
     "benchmark": {
       "taiex_period_pct": -1.89,
       "etf0050_period_pct": -3.33,
-      "taiex_index_start": 258.59,
-      "taiex_index_end": 253.7,
-      "etf0050_index_start": 271.76,
-      "etf0050_index_end": 262.71
+      "taiex_index_start": 416.76,
+      "taiex_index_end": 408.88,
+      "etf0050_index_start": 400.16,
+      "etf0050_index_end": 386.82
     }
   },
   {
     "period_start": 202212,
     "period_end": 202306,
-    "index_start": 311.09,
-    "index_end": 436.71,
-    "period_return_pct": 40.38,
-    "threshold": 2.88,
-    "eligible_funds": 124,
+    "index_start": 351.15,
+    "index_end": 493.95,
+    "period_return_pct": 40.67,
+    "threshold": 3.26,
+    "eligible_funds": 98,
     "changes": [
       {
-        "action": "換股",
-        "out": 17604124,
-        "out_name": "安聯台灣大壩基金-A類型-新臺幣",
-        "out_score": 13.35,
-        "in": 92002244,
-        "in_name": "統一黑馬基金",
-        "in_score": 34.54,
-        "gap": 21.19,
-        "threshold": 2.88
+        "action": "全員衛冕",
+        "threshold": 3.26
       }
     ],
     "funds": [
@@ -1945,18 +3522,6 @@
         "is_new": false
       },
       {
-        "id": 19330754,
-        "name": "野村優質基金-累積類型新臺幣計價",
-        "score": 28.0,
-        "R1y": -31.31,
-        "R3y": 64.95,
-        "R5y": 120.83,
-        "nav_start": 76.85,
-        "nav_end": 112.51,
-        "return_pct": 46.4,
-        "is_new": false
-      },
-      {
         "id": 92002244,
         "name": "統一黑馬基金",
         "score": 34.54,
@@ -1966,7 +3531,19 @@
         "nav_start": 122.05,
         "nav_end": 169.26,
         "return_pct": 38.68,
-        "is_new": true
+        "is_new": false
+      },
+      {
+        "id": 1031564,
+        "name": "野村積極成長基金",
+        "score": 24.49,
+        "R1y": -28.92,
+        "R3y": 58.5,
+        "R5y": 107.03,
+        "nav_start": 25.63,
+        "nav_end": 37.89,
+        "return_pct": 47.83,
+        "is_new": false
       },
       {
         "id": 73990253,
@@ -1996,20 +3573,20 @@
     "benchmark": {
       "taiex_period_pct": 21.76,
       "etf0050_period_pct": 20.54,
-      "taiex_index_start": 253.7,
-      "taiex_index_end": 308.91,
-      "etf0050_index_start": 262.71,
-      "etf0050_index_end": 316.66
+      "taiex_index_start": 408.88,
+      "taiex_index_end": 497.86,
+      "etf0050_index_start": 386.82,
+      "etf0050_index_end": 466.27
     }
   },
   {
     "period_start": 202306,
     "period_end": 202312,
-    "index_start": 436.71,
-    "index_end": 503.92,
-    "period_return_pct": 15.39,
-    "threshold": 6.49,
-    "eligible_funds": 123,
+    "index_start": 493.95,
+    "index_end": 581.01,
+    "period_return_pct": 17.62,
+    "threshold": 6.39,
+    "eligible_funds": 96,
     "changes": [
       {
         "action": "換股",
@@ -2020,18 +3597,7 @@
         "in_name": "野村成長基金",
         "in_score": 101.74,
         "gap": 24.72,
-        "threshold": 6.49
-      },
-      {
-        "action": "換股",
-        "out": 18480065,
-        "out_name": "安聯台灣科技基金",
-        "out_score": 88.68,
-        "in": 1031564,
-        "in_name": "野村積極成長基金",
-        "in_score": 101.1,
-        "gap": 12.41,
-        "threshold": 6.49
+        "threshold": 6.39
       }
     ],
     "funds": [
@@ -2048,15 +3614,15 @@
         "is_new": true
       },
       {
-        "id": 19330754,
-        "name": "野村優質基金-累積類型新臺幣計價",
-        "score": 99.18,
-        "R1y": 44.78,
-        "R3y": 114.96,
-        "R5y": 211.49,
-        "nav_start": 112.51,
-        "nav_end": 125.2,
-        "return_pct": 11.28,
+        "id": 18480065,
+        "name": "安聯台灣科技基金",
+        "score": 88.68,
+        "R1y": 36.38,
+        "R3y": 108.61,
+        "R5y": 189.54,
+        "nav_start": 141.21,
+        "nav_end": 172.91,
+        "return_pct": 22.45,
         "is_new": false
       },
       {
@@ -2081,7 +3647,7 @@
         "nav_start": 37.89,
         "nav_end": 43.74,
         "return_pct": 15.44,
-        "is_new": true
+        "is_new": false
       },
       {
         "id": 73990253,
@@ -2099,42 +3665,31 @@
     "benchmark": {
       "taiex_period_pct": 7.98,
       "etf0050_period_pct": 6.74,
-      "taiex_index_start": 308.91,
-      "taiex_index_end": 333.57,
-      "etf0050_index_start": 316.66,
-      "etf0050_index_end": 338.02
+      "taiex_index_start": 497.86,
+      "taiex_index_end": 537.6,
+      "etf0050_index_start": 466.27,
+      "etf0050_index_end": 497.71
     }
   },
   {
     "period_start": 202312,
     "period_end": 202406,
-    "index_start": 503.92,
-    "index_end": 620.31,
+    "index_start": 581.01,
+    "index_end": 715.21,
     "period_return_pct": 23.1,
-    "threshold": 6.21,
-    "eligible_funds": 123,
+    "threshold": 9.51,
+    "eligible_funds": 96,
     "changes": [
       {
         "action": "換股",
         "out": 92002244,
         "out_name": "統一黑馬基金",
         "out_score": 115.19,
-        "in": 18480065,
-        "in_name": "安聯台灣科技基金",
-        "in_score": 129.49,
-        "gap": 14.3,
-        "threshold": 6.21
-      },
-      {
-        "action": "換股",
-        "out": 19330754,
-        "out_name": "野村優質基金-累積類型新臺幣計價",
-        "out_score": 120.01,
         "in": 17600534,
         "in_name": "野村高科技基金",
         "in_score": 129.01,
-        "gap": 9.0,
-        "threshold": 6.21
+        "gap": 13.82,
+        "threshold": 9.51
       }
     ],
     "funds": [
@@ -2160,7 +3715,7 @@
         "nav_start": 172.91,
         "nav_end": 221.96,
         "return_pct": 28.37,
-        "is_new": true
+        "is_new": false
       },
       {
         "id": 1031564,
@@ -2202,20 +3757,20 @@
     "benchmark": {
       "taiex_period_pct": 29.52,
       "etf0050_period_pct": 39.96,
-      "taiex_index_start": 333.57,
-      "taiex_index_end": 432.05,
-      "etf0050_index_start": 338.02,
-      "etf0050_index_end": 473.09
+      "taiex_index_start": 537.6,
+      "taiex_index_end": 696.31,
+      "etf0050_index_start": 497.71,
+      "etf0050_index_end": 696.61
     }
   },
   {
     "period_start": 202406,
     "period_end": 202412,
-    "index_start": 620.31,
-    "index_end": 625.6,
-    "period_return_pct": 0.85,
-    "threshold": 6.28,
-    "eligible_funds": 123,
+    "index_start": 715.21,
+    "index_end": 722.58,
+    "period_return_pct": 1.03,
+    "threshold": 7.08,
+    "eligible_funds": 94,
     "changes": [
       {
         "action": "換股",
@@ -2226,21 +3781,22 @@
         "in_name": "統一台灣動力基金",
         "in_score": 121.25,
         "gap": 16.34,
-        "threshold": 6.28
-      },
-      {
-        "action": "換股",
-        "out": 17146752,
-        "out_name": "野村成長基金",
-        "out_score": 105.19,
-        "in": 42532205,
-        "in_name": "路博邁台灣5G股票基金T累積級別(新臺幣)",
-        "in_score": 115.48,
-        "gap": 10.29,
-        "threshold": 6.28
+        "threshold": 7.08
       }
     ],
     "funds": [
+      {
+        "id": 17146752,
+        "name": "野村成長基金",
+        "score": 105.19,
+        "R1y": 38.16,
+        "R3y": 72.03,
+        "R5y": 322.51,
+        "nav_start": 124.05,
+        "nav_end": 127.15,
+        "return_pct": 2.5,
+        "is_new": false
+      },
       {
         "id": 18480065,
         "name": "安聯台灣科技基金",
@@ -2278,18 +3834,6 @@
         "is_new": false
       },
       {
-        "id": 42532205,
-        "name": "路博邁台灣5G股票基金T累積級別(新臺幣)",
-        "score": 115.48,
-        "R1y": 70.45,
-        "R3y": 120.7,
-        "R5y": 220.22,
-        "nav_start": 31.67,
-        "nav_end": 32.18,
-        "return_pct": 1.61,
-        "is_new": true
-      },
-      {
         "id": 17600534,
         "name": "野村高科技基金",
         "score": 108.16,
@@ -2305,20 +3849,20 @@
     "benchmark": {
       "taiex_period_pct": 1.71,
       "etf0050_period_pct": 5.87,
-      "taiex_index_start": 432.05,
-      "taiex_index_end": 439.43,
-      "etf0050_index_start": 473.09,
-      "etf0050_index_end": 500.84
+      "taiex_index_start": 696.31,
+      "taiex_index_end": 708.2,
+      "etf0050_index_start": 696.61,
+      "etf0050_index_end": 737.47
     }
   },
   {
     "period_start": 202412,
     "period_end": 202506,
-    "index_start": 625.6,
-    "index_end": 607.64,
-    "period_return_pct": -2.87,
-    "threshold": 4.41,
-    "eligible_funds": 123,
+    "index_start": 722.58,
+    "index_end": 690.72,
+    "period_return_pct": -4.41,
+    "threshold": 4.43,
+    "eligible_funds": 90,
     "changes": [
       {
         "action": "換股",
@@ -2329,7 +3873,7 @@
         "in_name": "野村鴻運基金",
         "in_score": 80.11,
         "gap": 9.89,
-        "threshold": 4.41
+        "threshold": 4.43
       },
       {
         "action": "換股",
@@ -2340,7 +3884,18 @@
         "in_name": "瀚亞高科技基金",
         "in_score": 79.96,
         "gap": 9.35,
-        "threshold": 4.41
+        "threshold": 4.43
+      },
+      {
+        "action": "換股",
+        "out": 17146752,
+        "out_name": "野村成長基金",
+        "out_score": 72.77,
+        "in": 26273336,
+        "in_name": "日盛MIT主流基金",
+        "in_score": 78.32,
+        "gap": 5.56,
+        "threshold": 4.43
       }
     ],
     "funds": [
@@ -2369,18 +3924,6 @@
         "is_new": false
       },
       {
-        "id": 42532205,
-        "name": "路博邁台灣5G股票基金T累積級別(新臺幣)",
-        "score": 92.98,
-        "R1y": 33.8,
-        "R3y": 117.87,
-        "R5y": 203.58,
-        "nav_start": 32.18,
-        "nav_end": 31.15,
-        "return_pct": -3.2,
-        "is_new": false
-      },
-      {
         "id": 968493,
         "name": "野村鴻運基金",
         "score": 80.11,
@@ -2390,6 +3933,18 @@
         "nav_start": 83.1,
         "nav_end": 80.65,
         "return_pct": -2.95,
+        "is_new": true
+      },
+      {
+        "id": 26273336,
+        "name": "日盛MIT主流基金",
+        "score": 78.32,
+        "R1y": 29.14,
+        "R3y": 67.26,
+        "R5y": 217.89,
+        "nav_start": 57.57,
+        "nav_end": 51.3,
+        "return_pct": -10.89,
         "is_new": true
       },
       {
@@ -2408,24 +3963,31 @@
     "benchmark": {
       "taiex_period_pct": -2.18,
       "etf0050_period_pct": -2.4,
-      "taiex_index_start": 439.43,
-      "taiex_index_end": 429.83,
-      "etf0050_index_start": 500.84,
-      "etf0050_index_end": 488.83
+      "taiex_index_start": 708.2,
+      "taiex_index_end": 692.74,
+      "etf0050_index_start": 737.47,
+      "etf0050_index_end": 719.78
     }
   },
   {
     "period_start": 202506,
     "period_end": 202512,
-    "index_start": 607.64,
-    "index_end": 989.6,
-    "period_return_pct": 62.86,
-    "threshold": 4.94,
-    "eligible_funds": 125,
+    "index_start": 690.72,
+    "index_end": 1116.17,
+    "period_return_pct": 61.59,
+    "threshold": 6.85,
+    "eligible_funds": 84,
     "changes": [
       {
-        "action": "全員衛冕",
-        "threshold": 4.94
+        "action": "換股",
+        "out": 26273336,
+        "out_name": "日盛MIT主流基金",
+        "out_score": 63.58,
+        "in": 17600534,
+        "in_name": "野村高科技基金",
+        "in_score": 83.14,
+        "gap": 19.56,
+        "threshold": 6.85
       }
     ],
     "funds": [
@@ -2466,16 +4028,16 @@
         "is_new": false
       },
       {
-        "id": 42532205,
-        "name": "路博邁台灣5G股票基金T累積級別(新臺幣)",
-        "score": 85.14,
-        "R1y": -1.64,
-        "R3y": 156.38,
-        "R5y": 195.26,
-        "nav_start": 31.15,
-        "nav_end": 51.05,
-        "return_pct": 63.88,
-        "is_new": false
+        "id": 17600534,
+        "name": "野村高科技基金",
+        "score": 83.14,
+        "R1y": 4.2,
+        "R3y": 132.46,
+        "R5y": 206.5,
+        "nav_start": 41.47,
+        "nav_end": 65.34,
+        "return_pct": 57.56,
+        "is_new": true
       },
       {
         "id": 92003102,
@@ -2493,10 +4055,10 @@
     "benchmark": {
       "taiex_period_pct": 32.36,
       "etf0050_period_pct": 38.68,
-      "taiex_index_start": 429.83,
-      "taiex_index_end": 568.94,
-      "etf0050_index_start": 488.83,
-      "etf0050_index_end": 677.92
+      "taiex_index_start": 692.74,
+      "taiex_index_end": 916.93,
+      "etf0050_index_start": 719.78,
+      "etf0050_index_end": 998.21
     }
   }
 ]

@@ -1989,10 +1989,10 @@
       }
     ],
     "benchmark": {
-      "taiex_period_pct": 0.95,
+      "taiex_period_pct": null,
       "etf0050_period_pct": 3.78,
       "taiex_index_start": 197.18,
-      "taiex_index_end": 199.05,
+      "taiex_index_end": null,
       "etf0050_index_start": 184.88,
       "etf0050_index_end": 191.87
     }
@@ -2092,9 +2092,9 @@
       }
     ],
     "benchmark": {
-      "taiex_period_pct": -7.75,
+      "taiex_period_pct": null,
       "etf0050_period_pct": -9.5,
-      "taiex_index_start": 199.05,
+      "taiex_index_start": null,
       "taiex_index_end": 183.63,
       "etf0050_index_start": 191.87,
       "etf0050_index_end": 173.64

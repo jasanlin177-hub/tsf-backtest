@@ -102,12 +102,12 @@
       }
     ],
     "benchmark": {
-      "taiex_period_pct": 3.05,
+      "taiex_period_pct": null,
       "etf0050_period_pct": 3.37,
-      "taiex_index_start": 100.0,
-      "taiex_index_end": 103.05,
-      "etf0050_index_start": 100.0,
-      "etf0050_index_end": 103.37
+      "taiex_index_start": null,
+      "taiex_index_end": null,
+      "etf0050_index_start": null,
+      "etf0050_index_end": null
     }
   },
   {
@@ -194,12 +194,12 @@
       }
     ],
     "benchmark": {
-      "taiex_period_pct": 20.76,
+      "taiex_period_pct": null,
       "etf0050_period_pct": 16.64,
-      "taiex_index_start": 103.05,
-      "taiex_index_end": 124.44,
-      "etf0050_index_start": 103.37,
-      "etf0050_index_end": 120.57
+      "taiex_index_start": null,
+      "taiex_index_end": null,
+      "etf0050_index_start": null,
+      "etf0050_index_end": null
     }
   },
   {
@@ -319,12 +319,12 @@
       }
     ],
     "benchmark": {
-      "taiex_period_pct": 14.36,
+      "taiex_period_pct": null,
       "etf0050_period_pct": 13.61,
-      "taiex_index_start": 124.44,
-      "taiex_index_end": 142.31,
-      "etf0050_index_start": 120.57,
-      "etf0050_index_end": 136.98
+      "taiex_index_start": null,
+      "taiex_index_end": null,
+      "etf0050_index_start": null,
+      "etf0050_index_end": null
     }
   },
   {
@@ -422,12 +422,12 @@
       }
     ],
     "benchmark": {
-      "taiex_period_pct": -1.63,
+      "taiex_period_pct": null,
       "etf0050_period_pct": -2.15,
-      "taiex_index_start": 142.31,
-      "taiex_index_end": 139.99,
-      "etf0050_index_start": 136.98,
-      "etf0050_index_end": 134.03
+      "taiex_index_start": null,
+      "taiex_index_end": null,
+      "etf0050_index_start": null,
+      "etf0050_index_end": null
     }
   },
   {
@@ -525,12 +525,12 @@
       }
     ],
     "benchmark": {
-      "taiex_period_pct": -11.08,
+      "taiex_period_pct": null,
       "etf0050_period_pct": -10.15,
-      "taiex_index_start": 139.99,
-      "taiex_index_end": 124.49,
-      "etf0050_index_start": 134.03,
-      "etf0050_index_end": 120.43
+      "taiex_index_start": null,
+      "taiex_index_end": null,
+      "etf0050_index_start": null,
+      "etf0050_index_end": null
     }
   },
   {
@@ -617,12 +617,12 @@
       }
     ],
     "benchmark": {
-      "taiex_period_pct": -35.98,
+      "taiex_period_pct": null,
       "etf0050_period_pct": -36.67,
-      "taiex_index_start": 124.49,
-      "taiex_index_end": 79.7,
-      "etf0050_index_start": 120.43,
-      "etf0050_index_end": 76.27
+      "taiex_index_start": null,
+      "taiex_index_end": null,
+      "etf0050_index_start": null,
+      "etf0050_index_end": null
     }
   },
   {
@@ -720,12 +720,12 @@
       }
     ],
     "benchmark": {
-      "taiex_period_pct": 40.25,
+      "taiex_period_pct": null,
       "etf0050_period_pct": 34.44,
-      "taiex_index_start": 79.7,
-      "taiex_index_end": 111.78,
-      "etf0050_index_start": 76.27,
-      "etf0050_index_end": 102.54
+      "taiex_index_start": null,
+      "taiex_index_end": null,
+      "etf0050_index_start": null,
+      "etf0050_index_end": null
     }
   },
   {
@@ -834,12 +834,12 @@
       }
     ],
     "benchmark": {
-      "taiex_period_pct": 30.72,
+      "taiex_period_pct": null,
       "etf0050_period_pct": 29.31,
-      "taiex_index_start": 111.78,
-      "taiex_index_end": 146.12,
-      "etf0050_index_start": 102.54,
-      "etf0050_index_end": 132.59
+      "taiex_index_start": null,
+      "taiex_index_end": null,
+      "etf0050_index_start": null,
+      "etf0050_index_end": null
     }
   },
   {
@@ -959,12 +959,12 @@
       }
     ],
     "benchmark": {
-      "taiex_period_pct": -10.43,
+      "taiex_period_pct": null,
       "etf0050_period_pct": -12.23,
-      "taiex_index_start": 146.12,
-      "taiex_index_end": 130.89,
-      "etf0050_index_start": 132.59,
-      "etf0050_index_end": 116.37
+      "taiex_index_start": null,
+      "taiex_index_end": null,
+      "etf0050_index_start": null,
+      "etf0050_index_end": null
     }
   },
   {
@@ -1073,12 +1073,12 @@
       }
     ],
     "benchmark": {
-      "taiex_period_pct": 26.79,
+      "taiex_period_pct": null,
       "etf0050_period_pct": 28.59,
-      "taiex_index_start": 130.89,
-      "taiex_index_end": 165.96,
-      "etf0050_index_start": 116.37,
-      "etf0050_index_end": 149.63
+      "taiex_index_start": null,
+      "taiex_index_end": null,
+      "etf0050_index_start": null,
+      "etf0050_index_end": null
     }
   },
   {
@@ -1165,12 +1165,12 @@
       }
     ],
     "benchmark": {
-      "taiex_period_pct": -3.05,
+      "taiex_period_pct": null,
       "etf0050_period_pct": -3.54,
-      "taiex_index_start": 165.96,
-      "taiex_index_end": 160.9,
-      "etf0050_index_start": 149.63,
-      "etf0050_index_end": 144.34
+      "taiex_index_start": null,
+      "taiex_index_end": null,
+      "etf0050_index_start": null,
+      "etf0050_index_end": null
     }
   },
   {
@@ -1268,12 +1268,12 @@
       }
     ],
     "benchmark": {
-      "taiex_period_pct": -15.4,
+      "taiex_period_pct": null,
       "etf0050_period_pct": -12.7,
-      "taiex_index_start": 160.9,
-      "taiex_index_end": 136.12,
-      "etf0050_index_start": 144.34,
-      "etf0050_index_end": 126.01
+      "taiex_index_start": null,
+      "taiex_index_end": null,
+      "etf0050_index_start": null,
+      "etf0050_index_end": null
     }
   },
   {
@@ -1360,12 +1360,12 @@
       }
     ],
     "benchmark": {
-      "taiex_period_pct": 3.3,
+      "taiex_period_pct": null,
       "etf0050_period_pct": 1.1,
-      "taiex_index_start": 136.12,
-      "taiex_index_end": 140.61,
-      "etf0050_index_start": 126.01,
-      "etf0050_index_end": 127.4
+      "taiex_index_start": null,
+      "taiex_index_end": null,
+      "etf0050_index_start": null,
+      "etf0050_index_end": null
     }
   },
   {
@@ -1463,12 +1463,12 @@
       }
     ],
     "benchmark": {
-      "taiex_period_pct": 9.34,
+      "taiex_period_pct": null,
       "etf0050_period_pct": 11.19,
-      "taiex_index_start": 140.61,
-      "taiex_index_end": 153.74,
-      "etf0050_index_start": 127.4,
-      "etf0050_index_end": 141.66
+      "taiex_index_start": null,
+      "taiex_index_end": null,
+      "etf0050_index_start": null,
+      "etf0050_index_end": null
     }
   },
   {
@@ -1566,12 +1566,12 @@
       }
     ],
     "benchmark": {
-      "taiex_period_pct": 4.83,
+      "taiex_period_pct": null,
       "etf0050_period_pct": 3.95,
-      "taiex_index_start": 153.74,
-      "taiex_index_end": 161.16,
-      "etf0050_index_start": 141.66,
-      "etf0050_index_end": 147.25
+      "taiex_index_start": null,
+      "taiex_index_end": null,
+      "etf0050_index_start": null,
+      "etf0050_index_end": null
     }
   },
   {
@@ -1669,12 +1669,12 @@
       }
     ],
     "benchmark": {
-      "taiex_period_pct": 9.83,
+      "taiex_period_pct": null,
       "etf0050_period_pct": 7.35,
-      "taiex_index_start": 161.16,
-      "taiex_index_end": 177.01,
-      "etf0050_index_start": 147.25,
-      "etf0050_index_end": 158.07
+      "taiex_index_start": null,
+      "taiex_index_end": null,
+      "etf0050_index_start": null,
+      "etf0050_index_end": null
     }
   },
   {
@@ -1772,12 +1772,12 @@
       }
     ],
     "benchmark": {
-      "taiex_period_pct": 9.4,
+      "taiex_period_pct": null,
       "etf0050_period_pct": 12.16,
-      "taiex_index_start": 177.01,
-      "taiex_index_end": 193.66,
-      "etf0050_index_start": 158.07,
-      "etf0050_index_end": 177.3
+      "taiex_index_start": null,
+      "taiex_index_end": null,
+      "etf0050_index_start": null,
+      "etf0050_index_end": null
     }
   },
   {
@@ -1886,12 +1886,12 @@
       }
     ],
     "benchmark": {
-      "taiex_period_pct": 1.82,
+      "taiex_period_pct": null,
       "etf0050_period_pct": 4.28,
-      "taiex_index_start": 193.66,
-      "taiex_index_end": 197.18,
-      "etf0050_index_start": 177.3,
-      "etf0050_index_end": 184.88
+      "taiex_index_start": null,
+      "taiex_index_end": null,
+      "etf0050_index_start": null,
+      "etf0050_index_end": null
     }
   },
   {
@@ -1989,12 +1989,12 @@
       }
     ],
     "benchmark": {
-      "taiex_period_pct": 0.95,
+      "taiex_period_pct": null,
       "etf0050_period_pct": 3.78,
-      "taiex_index_start": 197.18,
-      "taiex_index_end": 199.05,
-      "etf0050_index_start": 184.88,
-      "etf0050_index_end": 191.87
+      "taiex_index_start": null,
+      "taiex_index_end": null,
+      "etf0050_index_start": null,
+      "etf0050_index_end": null
     }
   },
   {
@@ -2092,12 +2092,12 @@
       }
     ],
     "benchmark": {
-      "taiex_period_pct": -7.75,
+      "taiex_period_pct": null,
       "etf0050_period_pct": -9.5,
-      "taiex_index_start": 199.05,
-      "taiex_index_end": 183.63,
-      "etf0050_index_start": 191.87,
-      "etf0050_index_end": 173.64
+      "taiex_index_start": null,
+      "taiex_index_end": null,
+      "etf0050_index_start": null,
+      "etf0050_index_end": null
     }
   },
   {
@@ -2206,12 +2206,12 @@
       }
     ],
     "benchmark": {
-      "taiex_period_pct": 5.09,
+      "taiex_period_pct": null,
       "etf0050_period_pct": 7.15,
-      "taiex_index_start": 183.63,
-      "taiex_index_end": 192.97,
-      "etf0050_index_start": 173.64,
-      "etf0050_index_end": 186.06
+      "taiex_index_start": null,
+      "taiex_index_end": null,
+      "etf0050_index_start": null,
+      "etf0050_index_end": null
     }
   },
   {
@@ -2298,12 +2298,12 @@
       }
     ],
     "benchmark": {
-      "taiex_period_pct": 10.0,
+      "taiex_period_pct": null,
       "etf0050_period_pct": 10.74,
-      "taiex_index_start": 192.97,
-      "taiex_index_end": 212.25,
-      "etf0050_index_start": 186.06,
-      "etf0050_index_end": 206.05
+      "taiex_index_start": null,
+      "taiex_index_end": null,
+      "etf0050_index_start": null,
+      "etf0050_index_end": null
     }
   },
   {
@@ -2401,12 +2401,12 @@
       }
     ],
     "benchmark": {
-      "taiex_period_pct": 13.38,
+      "taiex_period_pct": null,
       "etf0050_period_pct": 14.81,
-      "taiex_index_start": 212.25,
-      "taiex_index_end": 240.66,
-      "etf0050_index_start": 206.05,
-      "etf0050_index_end": 236.56
+      "taiex_index_start": null,
+      "taiex_index_end": null,
+      "etf0050_index_start": null,
+      "etf0050_index_end": null
     }
   },
   {
@@ -2504,12 +2504,12 @@
       }
     ],
     "benchmark": {
-      "taiex_period_pct": 5.41,
+      "taiex_period_pct": null,
       "etf0050_period_pct": 3.12,
-      "taiex_index_start": 240.66,
-      "taiex_index_end": 253.69,
-      "etf0050_index_start": 236.56,
-      "etf0050_index_end": 243.96
+      "taiex_index_start": null,
+      "taiex_index_end": null,
+      "etf0050_index_start": null,
+      "etf0050_index_end": null
     }
   },
   {
@@ -2618,12 +2618,12 @@
       }
     ],
     "benchmark": {
-      "taiex_period_pct": 2.8,
+      "taiex_period_pct": null,
       "etf0050_period_pct": 1.61,
-      "taiex_index_start": 253.69,
-      "taiex_index_end": 260.79,
-      "etf0050_index_start": 243.96,
-      "etf0050_index_end": 247.88
+      "taiex_index_start": null,
+      "taiex_index_end": null,
+      "etf0050_index_start": null,
+      "etf0050_index_end": null
     }
   },
   {
@@ -2710,12 +2710,12 @@
       }
     ],
     "benchmark": {
-      "taiex_period_pct": -7.42,
+      "taiex_period_pct": null,
       "etf0050_period_pct": -6.4,
-      "taiex_index_start": 260.79,
-      "taiex_index_end": 241.45,
-      "etf0050_index_start": 247.88,
-      "etf0050_index_end": 232.03
+      "taiex_index_start": null,
+      "taiex_index_end": null,
+      "etf0050_index_start": null,
+      "etf0050_index_end": null
     }
   },
   {
@@ -2813,12 +2813,12 @@
       }
     ],
     "benchmark": {
-      "taiex_period_pct": 11.43,
+      "taiex_period_pct": null,
       "etf0050_period_pct": 10.52,
-      "taiex_index_start": 241.45,
-      "taiex_index_end": 269.04,
-      "etf0050_index_start": 232.03,
-      "etf0050_index_end": 256.43
+      "taiex_index_start": null,
+      "taiex_index_end": null,
+      "etf0050_index_start": null,
+      "etf0050_index_end": null
     }
   },
   {
@@ -2911,12 +2911,12 @@
       }
     ],
     "benchmark": {
-      "taiex_period_pct": 15.7,
+      "taiex_period_pct": null,
       "etf0050_period_pct": 20.32,
-      "taiex_index_start": 269.04,
-      "taiex_index_end": 311.27,
-      "etf0050_index_start": 256.43,
-      "etf0050_index_end": 308.53
+      "taiex_index_start": null,
+      "taiex_index_end": null,
+      "etf0050_index_start": null,
+      "etf0050_index_end": null
     }
   },
   {
@@ -3022,12 +3022,12 @@
       }
     ],
     "benchmark": {
-      "taiex_period_pct": -2.33,
+      "taiex_period_pct": null,
       "etf0050_period_pct": -4.16,
-      "taiex_index_start": 311.27,
-      "taiex_index_end": 304.01,
-      "etf0050_index_start": 308.53,
-      "etf0050_index_end": 295.69
+      "taiex_index_start": null,
+      "taiex_index_end": null,
+      "etf0050_index_start": null,
+      "etf0050_index_end": null
     }
   },
   {
@@ -3114,12 +3114,12 @@
       }
     ],
     "benchmark": {
-      "taiex_period_pct": 30.16,
+      "taiex_period_pct": null,
       "etf0050_period_pct": 37.35,
-      "taiex_index_start": 304.01,
-      "taiex_index_end": 395.7,
-      "etf0050_index_start": 295.69,
-      "etf0050_index_end": 406.12
+      "taiex_index_start": null,
+      "taiex_index_end": null,
+      "etf0050_index_start": null,
+      "etf0050_index_end": null
     }
   },
   {
@@ -3217,12 +3217,12 @@
       }
     ],
     "benchmark": {
-      "taiex_period_pct": 21.09,
+      "taiex_period_pct": null,
       "etf0050_period_pct": 15.95,
-      "taiex_index_start": 395.7,
-      "taiex_index_end": 479.14,
-      "etf0050_index_start": 406.12,
-      "etf0050_index_end": 470.91
+      "taiex_index_start": null,
+      "taiex_index_end": null,
+      "etf0050_index_start": null,
+      "etf0050_index_end": null
     }
   },
   {
@@ -3309,12 +3309,12 @@
       }
     ],
     "benchmark": {
-      "taiex_period_pct": 4.93,
+      "taiex_period_pct": null,
       "etf0050_period_pct": 5.01,
-      "taiex_index_start": 479.14,
-      "taiex_index_end": 502.78,
-      "etf0050_index_start": 470.91,
-      "etf0050_index_end": 494.52
+      "taiex_index_start": null,
+      "taiex_index_end": null,
+      "etf0050_index_start": null,
+      "etf0050_index_end": null
     }
   },
   {
@@ -3401,12 +3401,12 @@
       }
     ],
     "benchmark": {
-      "taiex_period_pct": -17.11,
+      "taiex_period_pct": null,
       "etf0050_period_pct": -19.08,
-      "taiex_index_start": 502.78,
-      "taiex_index_end": 416.76,
-      "etf0050_index_start": 494.52,
-      "etf0050_index_end": 400.16
+      "taiex_index_start": null,
+      "taiex_index_end": null,
+      "etf0050_index_start": null,
+      "etf0050_index_end": null
     }
   },
   {
@@ -3486,12 +3486,12 @@
       }
     ],
     "benchmark": {
-      "taiex_period_pct": -1.89,
+      "taiex_period_pct": null,
       "etf0050_period_pct": -3.33,
-      "taiex_index_start": 416.76,
-      "taiex_index_end": 408.88,
-      "etf0050_index_start": 400.16,
-      "etf0050_index_end": 386.82
+      "taiex_index_start": null,
+      "taiex_index_end": null,
+      "etf0050_index_start": null,
+      "etf0050_index_end": null
     }
   },
   {
@@ -3571,12 +3571,12 @@
       }
     ],
     "benchmark": {
-      "taiex_period_pct": 21.76,
+      "taiex_period_pct": null,
       "etf0050_period_pct": 20.54,
-      "taiex_index_start": 408.88,
-      "taiex_index_end": 497.86,
-      "etf0050_index_start": 386.82,
-      "etf0050_index_end": 466.27
+      "taiex_index_start": null,
+      "taiex_index_end": null,
+      "etf0050_index_start": null,
+      "etf0050_index_end": null
     }
   },
   {
@@ -3663,12 +3663,12 @@
       }
     ],
     "benchmark": {
-      "taiex_period_pct": 7.98,
+      "taiex_period_pct": null,
       "etf0050_period_pct": 6.74,
-      "taiex_index_start": 497.86,
-      "taiex_index_end": 537.6,
-      "etf0050_index_start": 466.27,
-      "etf0050_index_end": 497.71
+      "taiex_index_start": null,
+      "taiex_index_end": null,
+      "etf0050_index_start": null,
+      "etf0050_index_end": null
     }
   },
   {
@@ -3755,12 +3755,12 @@
       }
     ],
     "benchmark": {
-      "taiex_period_pct": 29.52,
+      "taiex_period_pct": null,
       "etf0050_period_pct": 39.96,
-      "taiex_index_start": 537.6,
-      "taiex_index_end": 696.31,
-      "etf0050_index_start": 497.71,
-      "etf0050_index_end": 696.61
+      "taiex_index_start": null,
+      "taiex_index_end": null,
+      "etf0050_index_start": null,
+      "etf0050_index_end": null
     }
   },
   {
@@ -3847,12 +3847,12 @@
       }
     ],
     "benchmark": {
-      "taiex_period_pct": 1.71,
+      "taiex_period_pct": null,
       "etf0050_period_pct": 5.87,
-      "taiex_index_start": 696.31,
-      "taiex_index_end": 708.2,
-      "etf0050_index_start": 696.61,
-      "etf0050_index_end": 737.47
+      "taiex_index_start": null,
+      "taiex_index_end": null,
+      "etf0050_index_start": null,
+      "etf0050_index_end": null
     }
   },
   {
@@ -3961,12 +3961,12 @@
       }
     ],
     "benchmark": {
-      "taiex_period_pct": -2.18,
+      "taiex_period_pct": null,
       "etf0050_period_pct": -2.4,
-      "taiex_index_start": 708.2,
-      "taiex_index_end": 692.74,
-      "etf0050_index_start": 737.47,
-      "etf0050_index_end": 719.78
+      "taiex_index_start": null,
+      "taiex_index_end": null,
+      "etf0050_index_start": null,
+      "etf0050_index_end": null
     }
   },
   {
@@ -4053,12 +4053,12 @@
       }
     ],
     "benchmark": {
-      "taiex_period_pct": 32.36,
+      "taiex_period_pct": null,
       "etf0050_period_pct": 38.68,
-      "taiex_index_start": 692.74,
-      "taiex_index_end": 916.93,
-      "etf0050_index_start": 719.78,
-      "etf0050_index_end": 998.21
+      "taiex_index_start": null,
+      "taiex_index_end": null,
+      "etf0050_index_start": null,
+      "etf0050_index_end": null
     }
   }
 ]
